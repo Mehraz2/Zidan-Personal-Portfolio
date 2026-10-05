@@ -142,13 +142,76 @@ select {
 
 
 
-
-
 /* =========================================================
    04. GLOBAL BACKGROUND ATMOSPHERE
 ========================================================= */
 
+body::before {
 
+    content: "";
 
+    position: fixed;
 
+    inset: 0;
 
+    pointer-events: none;
+
+    z-index: -10;
+
+    background:
+
+        radial-gradient(
+            circle at 78% 10%,
+            rgba(173, 113, 39, .13),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 12% 40%,
+            rgba(117, 75, 23, .07),
+            transparent 23%
+        ),
+
+        radial-gradient(
+            circle at 80% 75%,
+            rgba(201, 150, 63, .035),
+            transparent 25%
+        );
+
+    animation:
+
+        atmosphereMove
+        18s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+@keyframes atmosphereMove {
+
+    0% {
+
+        transform:
+            scale(1)
+            translate3d(0, 0, 0);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.04)
+            translate3d(-1%, 1%, 0);
+
+    }
+
+    100% {
+
+        transform:
+            scale(1.08)
+            translate3d(1%, -1%, 0);
+
+    }
+
+}
