@@ -1,0 +1,52 @@
+/* =========================================================
+   ZIDANVERSE
+   PREMIUM ENTREPRENEUR PORTFOLIO
+   CSS ONLY — A TO Z
+========================================================= */
+
+
+/* =========================================================
+   01. GOOGLE FONTS
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+
+/* =========================================================
+   02. ROOT VARIABLES
+========================================================= */
+
+
+:root {
+
+    --black: #070706;
+    --black-2: #0b0a08;
+    --black-3: #100e0b;
+
+    --gold: #c9963f;
+    --gold-light: #e2b765;
+    --gold-soft: #a87a32;
+    --gold-dark: #65491f;
+
+    --white: #f1eee7;
+    --white-soft: #d0cbc1;
+
+    --text: #9c968b;
+    --text-dark: #69645b;
+
+    --line: rgba(201, 150, 63, 0.20);
+    --line-light: rgba(255, 255, 255, 0.07);
+
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "DM Sans", Arial, sans-serif;
+
+    --container: 1240px;
+
+    --ease: cubic-bezier(.16, 1, .3, 1);
+
+}
+
+
+/* =========================================================
+   03. RESET
+========================================================= */
