@@ -215,3 +215,89 @@ body::before {
     }
 
 }
+
+
+
+
+
+
+/* =========================================================
+   05. GLOBAL MOVING GOLD LIGHT
+========================================================= */
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 420px;
+    height: 420px;
+
+    right: -180px;
+    top: 15%;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(201, 150, 63, .075),
+            transparent 68%
+        );
+
+    filter: blur(30px);
+
+    pointer-events: none;
+
+    z-index: -9;
+
+    animation:
+
+        globalGlow
+        12s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+@keyframes globalGlow {
+
+    from {
+
+        transform:
+            translateY(-50px)
+            scale(.9);
+
+    }
+
+    to {
+
+        transform:
+            translateY(100px)
+            scale(1.2);
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
