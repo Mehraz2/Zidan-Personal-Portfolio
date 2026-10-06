@@ -285,11 +285,10 @@ body::after {
 
 
 
+
 /* =========================================================
    06. GLOBAL CONTAINER
 ========================================================= */
-
-
 
 .section-container,
 .hero-container,
@@ -300,14 +299,28 @@ body::after {
         calc(100% - 80px),
         var(--container)
     );
-    margin-inline:auto;
+
+    margin-inline: auto;
+
 }
 
 
 
 
+/* =========================================================
+   07. SECTION BASE
+========================================================= */
 
+section {
 
+    position: relative;
+
+    border-bottom:
+        1px solid var(--line);
+
+    overflow: hidden;
+
+}
 
 
 
