@@ -285,12 +285,23 @@ body::after {
 
 
 
+/* =========================================================
+   06. GLOBAL CONTAINER
+========================================================= */
 
 
 
+.section-container,
+.hero-container,
+.footer-container,
+.contact-container {
 
-
-
+    width: min(
+        calc(100% - 80px),
+        var(--container)
+    );
+    margin-inline:auto;
+}
 
 
 
