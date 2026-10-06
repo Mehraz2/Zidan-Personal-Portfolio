@@ -325,3 +325,93 @@ section {
 
 
 
+
+/* =========================================================
+   08. GOLD MOVING GRID / NOISE-LIKE BACKGROUND
+========================================================= */
+
+.about-section::before,
+.business-section::before,
+.journey-section::before,
+.featured-section::before,
+.personal-section::before,
+.testimonial-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .25;
+
+    background-image:
+
+        linear-gradient(
+            rgba(201,150,63,.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(201,150,63,.025) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        80px 80px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            black 15%,
+            black 85%,
+            transparent
+        );
+
+    animation:
+
+        gridMove
+        25s
+        linear
+        infinite;
+
+}
+
+@keyframes gridMove {
+
+    from {
+
+        background-position:
+            0 0,
+            0 0;
+
+    }
+
+    to {
+
+        background-position:
+            80px 80px,
+            80px 80px;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
