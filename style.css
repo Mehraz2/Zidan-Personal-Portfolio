@@ -570,11 +570,38 @@ section {
 
 
 
+/* =========================================================
+   12. LOGO
+========================================================= */
 
+.logo {
 
+    font-family: var(--serif);
 
+    font-size: 31px;
 
+    font-weight: 500;
 
+    letter-spacing: -.5px;
+
+    color: var(--white);
+
+    transition:
+        color .4s ease;
+
+}
+
+.logo span {
+
+    color: var(--gold-light);
+
+}
+
+.logo:hover {
+
+    color: var(--gold-light);
+
+}
 
 
 
