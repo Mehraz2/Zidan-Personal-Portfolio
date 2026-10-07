@@ -405,8 +405,71 @@ section {
 
 
 
+/* =========================================================
+   09. SECTION LABEL
+========================================================= */
 
+.section-label-box {
 
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color: var(--gold-light);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+}
+
+.section-number {
+
+    color: var(--gold);
+
+    font-family: var(--serif);
+
+    font-size: 17px;
+
+    letter-spacing: 0;
+
+}
+
+.section-label {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+}
+
+.section-label::after {
+
+    content: "";
+
+    width: 42px;
+
+    height: 1px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--gold),
+            transparent
+        );
+
+}
 
 
 
