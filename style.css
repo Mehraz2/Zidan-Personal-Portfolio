@@ -605,14 +605,87 @@ section {
 
 
 
+/* =========================================================
+   13. NAVBAR
+========================================================= */
 
+.navbar {
 
+    display: flex;
 
+    align-items: center;
 
+    gap: 39px;
 
+}
 
+.navbar a {
 
+    position: relative;
 
+    color: #918c82;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    letter-spacing: 1.6px;
+
+    text-transform: uppercase;
+
+    transition:
+        color .35s ease,
+        transform .35s var(--ease);
+
+}
+
+.navbar a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -13px;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: var(--gold-light);
+
+    transform:
+        translateX(-50%)
+        scale(0);
+
+    transition:
+        transform .4s var(--ease);
+
+}
+
+.navbar a:hover,
+.navbar a.active {
+
+    color: var(--gold-light);
+
+}
+
+.navbar a:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+.navbar a.active::after,
+.navbar a:hover::after {
+
+    transform:
+        translateX(-50%)
+        scale(1);
+
+}
 
 
 
