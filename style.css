@@ -473,6 +473,139 @@ section {
 
 
 
+/* =========================================================
+   10. SECTION HEADING
+========================================================= */
+
+.section-heading {
+
+    font-family: var(--serif);
+
+    font-size: clamp(
+        50px,
+        5.5vw,
+        78px
+    );
+
+    line-height: .88;
+
+    font-weight: 400;
+
+    letter-spacing: -2.5px;
+
+    color: var(--white);
+
+}
+
+.section-heading span {
+
+    color: var(--gold-light);
+
+    font-style: italic;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
