@@ -790,12 +790,36 @@ section {
 
 
 
+/* =========================================================
+   15. HERO
+========================================================= */
 
+.hero-section {
 
+    min-height: 830px;
 
+    display: flex;
 
+    align-items: center;
 
+    position: relative;
 
+    background:
+
+        radial-gradient(
+            ellipse at 78% 45%,
+            rgba(166, 105, 31, .16),
+            transparent 32%
+        ),
+
+        linear-gradient(
+            120deg,
+            #070706,
+            #0b0907 50%,
+            #080706
+        );
+
+}
 
 
 
