@@ -823,6 +823,64 @@ section {
 
 
 
+/* HERO DECORATIVE LINE */
+
+.hero-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 1px;
+
+    height: 180px;
+
+    left: calc(
+        (100% - var(--container)) / 2 + 10px
+    );
+
+    top: 47%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            var(--gold),
+            transparent
+        );
+
+    animation:
+        verticalLine
+        2s
+        .8s
+        var(--ease)
+        both;
+
+}
+
+@keyframes verticalLine {
+
+    from {
+
+        transform:
+            scaleY(0);
+
+        transform-origin:
+            top;
+
+    }
+
+    to {
+
+        transform:
+            scaleY(1);
+
+        transform-origin:
+            top;
+
+    }
+
+}
+
 
 
 
