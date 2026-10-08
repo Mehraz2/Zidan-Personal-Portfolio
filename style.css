@@ -937,10 +937,22 @@ section {
 
 
 
+/* =========================================================
+   16. HERO CONTAINER
+========================================================= */
 
 
 
+.hero-container {
 
+    position: relative;
+
+    min-height: 830px;
+
+    display: flex;
+
+    align-items: center;
+}
 
 
 
