@@ -1011,8 +1011,36 @@ section {
 
 
 
+/* =========================================================
+   19. HERO TITLE
+========================================================= */
 
+.hero-title {
 
+    font-family: var(--serif);
+
+    font-size: clamp(
+        80px,
+        9vw,
+        130px
+    );
+
+    line-height: .78;
+
+    font-weight: 400;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 25px;
+
+    animation:
+        heroTitle
+        1.35s
+        .25s
+        var(--ease)
+        both;
+
+}
 
 
 
