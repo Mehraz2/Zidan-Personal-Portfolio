@@ -788,8 +788,6 @@ section {
 
 
 
-
-
 /* =========================================================
    15. HERO
 ========================================================= */
@@ -820,7 +818,6 @@ section {
         );
 
 }
-
 
 
 /* HERO DECORATIVE LINE */
@@ -882,13 +879,60 @@ section {
 }
 
 
+/* HERO GOLD DOT */
 
+.hero-section::after {
 
+    content: "";
 
+    position: absolute;
 
+    left:
+        calc(
+            (100% - var(--container)) / 2 + 7px
+        );
 
+    top: 46.5%;
 
+    width: 8px;
+    height: 8px;
 
+    border-radius: 50%;
+
+    background: var(--gold-light);
+
+    box-shadow:
+        0 0 18px
+        rgba(201,150,63,.7);
+
+    animation:
+        dotPulse
+        2.5s
+        ease-in-out
+        infinite;
+
+}
+
+@keyframes dotPulse {
+
+    0%,
+    100% {
+
+        transform: scale(.7);
+
+        opacity: .55;
+
+    }
+
+    50% {
+
+        transform: scale(1.25);
+
+        opacity: 1;
+
+    }
+
+}
 
 
 
