@@ -976,21 +976,36 @@ section {
 
 
 
+
+
+
+
 /* =========================================================
    18. HERO TAGLINE
 ========================================================= */
 
+.hero-tagline {
 
+    color: var(--gold-light);
 
+    font-size: 10px;
 
+    font-weight: 600;
 
+    letter-spacing: 3px;
 
+    text-transform: uppercase;
 
+    margin-bottom: 20px;
 
+    animation:
+        heroUp
+        1s
+        .2s
+        var(--ease)
+        both;
 
-
-
-
+}
 
 
 
