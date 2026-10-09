@@ -1363,6 +1363,184 @@ section {
 
 
 
+/* =========================================================
+   24. HERO IMAGE WRAPPER
+========================================================= */
+
+
+
+
+
+/* .hero-image-wrapper {
+
+    position: relative;
+
+    isolation: isolate;
+
+} */
+
+
+/* GOLD CIRCLE */
+
+/* .hero-image-wrapper::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 72%;
+
+    aspect-ratio: 1;
+
+    border:
+        1px solid
+        rgba(201,150,63,.30);
+
+    border-radius: 50%;
+
+    left: 12%;
+
+    top: 4%;
+
+    z-index: -1;
+
+    box-shadow:
+        0 0 80px
+        rgba(201,150,63,.08);
+
+    animation:
+        heroRing
+        7s
+        ease-in-out
+        infinite
+        alternate;
+
+} */
+
+/* 
+
+@keyframes heroRing {
+
+    from {
+
+        transform:
+            scale(1);
+
+        opacity: .35;
+
+    }
+
+    to {
+
+        transform:
+            scale(1.07);
+
+        opacity: .75;
+
+    }
+
+}
+ */
+
+
+
+/* SECOND RING */
+/* 
+.hero-image-wrapper::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 82%;
+
+    aspect-ratio: 1;
+
+    border:
+        1px solid
+        rgba(201,150,63,.08);
+
+    border-radius: 50%;
+
+    left: 7%;
+
+    top: -1%;
+
+    z-index: -2;
+
+    animation:
+        heroRing2
+        10s
+        linear
+        infinite;
+
+}
+
+
+
+@keyframes heroRing2 {
+
+    from {
+
+        transform:
+            rotate(0deg)
+            scale(1);
+
+    }
+
+    to {
+
+        transform:
+            rotate(360deg)
+            scale(1.03);
+
+    }
+
+} */
+
+
+
+/* IMAGE */
+/* 
+.hero-image img {
+
+    width: 100%;
+
+    position: relative;
+
+    z-index: 2;
+
+    object-fit: cover;
+
+    filter:
+        brightness(.82)
+        contrast(1.06);
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black 78%,
+            transparent 100%
+        );
+
+    transition:
+        transform 1s var(--ease),
+        filter .7s ease;
+
+}
+
+.hero-image:hover img {
+
+    transform:
+        scale(1.025);
+
+    filter:
+        brightness(.9)
+        contrast(1.08);
+
+}
+
+ */
 
 
 
@@ -1373,27 +1551,163 @@ section {
 
 
 
+/* =========================================================
+   24. HERO IMAGE WRAPPER
+========================================================= */
+
+.hero-image-wrapper {
+    position: relative;
+    isolation: isolate;
+}
 
 
+/* =========================================================
+   GOLD CIRCLE — FOUR-SIDE WAVE
+========================================================= */
+
+.hero-image-wrapper::before {
+    content: "";
+
+    position: absolute;
+    width: 72%;
+    aspect-ratio: 1;
+
+    border: 1px solid rgba(201, 150, 63, .30);
+    border-radius: 50%;
+
+    left: 12%;
+    top: 4%;
+
+    z-index: -1;
+
+    box-shadow:
+        0 0 80px rgba(201, 150, 63, .08);
+
+    transform-origin: center;
+
+    animation: heroRing 8s ease-in-out infinite;
+}
+
+@keyframes heroRing {
+    0% {
+        transform: translate(0, -10px) scale(1);
+        opacity: .35;
+    }
+
+    25% {
+        transform: translate(10px, 0) scale(1.04);
+        opacity: .65;
+    }
+
+    50% {
+        transform: translate(0, 10px) scale(1.07);
+        opacity: .75;
+    }
+
+    75% {
+        transform: translate(-10px, 0) scale(1.04);
+        opacity: .55;
+    }
+
+    100% {
+        transform: translate(0, -10px) scale(1);
+        opacity: .35;
+    }
+}
 
 
+/* =========================================================
+   SECOND RING — ROTATING WAVE
+========================================================= */
+
+.hero-image-wrapper::after {
+    content: "";
+
+    position: absolute;
+    width: 82%;
+    aspect-ratio: 1;
+
+    border: 1px solid rgba(201, 150, 63, .12);
+    border-radius: 50%;
+
+    left: 7%;
+    top: -1%;
+
+    z-index: -2;
+
+    transform-origin: center;
+
+    animation: heroRing2 14s linear infinite;
+}
+
+@keyframes heroRing2 {
+    0% {
+        transform: translate(0, -6px) rotate(0deg) scale(1);
+    }
+
+    25% {
+        transform: translate(6px, 0) rotate(90deg) scale(1.025);
+    }
+
+    50% {
+        transform: translate(0, 6px) rotate(180deg) scale(1.04);
+    }
+
+    75% {
+        transform: translate(-6px, 0) rotate(270deg) scale(1.025);
+    }
+
+    100% {
+        transform: translate(0, -6px) rotate(360deg) scale(1);
+    }
+}
 
 
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.hero-image img {
+    width: 100%;
+
+    position: relative;
+    z-index: 2;
+
+    object-fit: cover;
+
+    filter:
+        brightness(.82)
+        contrast(1.06);
+
+    mask-image: linear-gradient(
+        to bottom,
+        black 78%,
+        transparent 100%
+    );
+
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        black 78%,
+        transparent 100%
+    );
+
+    transition:
+        transform 1s var(--ease),
+        filter .7s ease;
+}
 
 
+/* =========================================================
+   HERO IMAGE HOVER EFFECT
+========================================================= */
 
+.hero-image:hover img {
+    transform: scale(1.025);
 
-
-
-
-
-
-
-
-
-
-
-
+    filter:
+        brightness(.9)
+        contrast(1.08);
+}
 
 
 
