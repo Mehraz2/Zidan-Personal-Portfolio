@@ -1075,3 +1075,81 @@ section {
     }
 
 }
+
+
+
+
+/* =========================================================
+   20. HERO SUBTITLE
+========================================================= */
+
+.hero-subtitle {
+
+    font-family: var(--serif);
+
+    font-size: 28px;
+
+    line-height: 1.05;
+
+    font-weight: 400;
+
+    letter-spacing: .5px;
+
+    color: var(--white);
+
+    margin-bottom: 24px;
+
+    animation:
+        heroUp
+        1s
+        .45s
+        var(--ease)
+        both;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
