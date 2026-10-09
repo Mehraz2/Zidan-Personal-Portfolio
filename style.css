@@ -1949,3 +1949,108 @@ section {
 
 
 
+
+/* =========================================================
+   27. HOBBY BOX
+========================================================= */
+
+.hobby-box {
+
+    grid-column:
+        1 / -1;
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    padding-top: 25px;
+
+}
+
+.hobby-title {
+
+    color: var(--gold);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-right: 10px;
+
+}
+
+.hobby {
+
+    padding:
+        8px 12px;
+
+    border:
+        1px solid
+        var(--line);
+
+    color: var(--text);
+
+    font-size: 10px;
+
+    transition:
+        color .3s ease,
+        border-color .3s ease,
+        transform .3s var(--ease);
+
+}
+
+.hobby:hover {
+
+    color: var(--gold-light);
+
+    border-color:
+        rgba(201,150,63,.5);
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
