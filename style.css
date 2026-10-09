@@ -1035,16 +1035,43 @@ section {
 
     animation:
         heroTitle
-        1.35s
-        .25s
+        1.59s
+        .40s
         var(--ease)
         both;
 
 }
 
+.hero-title span {
 
+    color: var(--gold-light);
 
+}
 
+@keyframes heroTitle {
 
+    from {
 
+        opacity: 0;
 
+        transform:
+            translateY(90px);
+
+        filter:
+            blur(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+        filter:
+            blur(0);
+
+    }
+
+}
