@@ -1112,13 +1112,50 @@ section {
 
 
 
+/* =========================================================
+   21. HERO DESCRIPTION
+========================================================= */
 
+.hero-description {
 
+    max-width: 500px;
 
+    color: var(--text);
 
+    font-size: 12px;
 
+    line-height: 1.9;
 
+    animation:
+        heroUp
+        1s
+        .6s
+        var(--ease)
+        both;
 
+}
+
+@keyframes heroUp {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(40px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
 
 
 
