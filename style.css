@@ -1161,30 +1161,144 @@ section {
 
 
 
+/* =========================================================
+   22. HERO BUTTONS
+========================================================= */
+
+.hero-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+    margin-top: 32px;
+
+    animation:
+        heroUp
+        1s
+        .75s
+        var(--ease)
+        both;
+
+}
+
+.hero-btn {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    min-height: 46px;
+
+    padding:
+        0 21px;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.4px;
+
+    text-transform: uppercase;
+
+    transition:
+        transform .4s var(--ease),
+        box-shadow .4s ease;
+
+}
 
 
+/* PRIMARY */
+
+.primary-btn {
+
+    background:
+        linear-gradient(
+            135deg,
+            #e0b462,
+            #a6742d
+        );
+
+    color: #090806;
+
+}
+
+.primary-btn::after {
+
+    content: "↗";
+
+    font-size: 15px;
+
+    transition:
+        transform .4s var(--ease);
+
+}
+
+.primary-btn:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(201,150,63,.2);
+
+}
+
+.primary-btn:hover::after {
+
+    transform:
+        translate(4px,-4px);
+
+}
 
 
+/* SECONDARY */
 
+.secondary-btn {
 
+    color: var(--white);
 
+    border-bottom:
+        1px solid
+        var(--gold-dark);
 
+}
 
+.secondary-btn::after {
 
+    content: "↗";
 
+    color: var(--gold);
 
+    transition:
+        transform .4s var(--ease);
 
+}
 
+.secondary-btn:hover {
 
+    color: var(--gold-light);
 
+    transform:
+        translateY(-3px);
 
+}
 
+.secondary-btn:hover::after {
 
+    transform:
+        translate(4px,-4px);
 
-
-
-
-
+}
 
 
 
