@@ -2255,17 +2255,58 @@ section {
 
 
 
+* =========================================================
+   31. BUSINESS CARD TOP
+========================================================= */
 
+.business-card-top {
 
+    display: flex;
 
+    align-items: center;
 
+    justify-content: space-between;
 
+    margin-bottom: 20px;
 
+}
 
+.business-number {
 
+    color: var(--gold);
 
+    font-family: var(--serif);
 
+    font-size: 17px;
 
+}
+
+.business-icon {
+
+    width: 35px;
+    height: 35px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid
+        var(--gold-dark);
+
+    color: var(--gold-light);
+
+    transition:
+        transform .5s var(--ease);
+
+}
+
+.business-card:hover .business-icon {
+
+    transform:
+        rotate(45deg);
+
+}
 
 
 
