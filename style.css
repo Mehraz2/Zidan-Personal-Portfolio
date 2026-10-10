@@ -2523,30 +2523,108 @@ section {
 
 
 
+/* =========================================================
+   36. JOURNEY GRID
+========================================================= */
+
+
+.journey-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    border-top:
+        1px solid var(--line);
+
+}
+
+
+
+.journey-item {
+
+    position: relative;
+
+    min-height: 220px;
+
+    padding:
+        30px 25px;
+
+    border-right:
+        1px solid var(--line);
+
+    transition:
+        background .5s ease,
+        transform .5s var(--ease);
+
+}
+
+
+
+.journey-item:last-child {
+
+    border-right: none;
+
+}
+
+
+
+.journey-item:hover {
+
+    background:
+        rgba(201,150,63,.025);
+
+    transform:
+        translateY(-7px);
+
+}
+
+
+.journey-number {
+
+    display: inline-block;
+
+    color: var(--gold);
+
+    font-family: var(--serif);
+
+    font-size: 18px;
+
+    margin-bottom: 35px;
+
+}
 
 
 
 
 
+.journey-item h3 {
+
+    font-family: var(--serif);
+
+    color: var(--white);
+
+    font-size: 29px;
+
+    font-weight: 500;
+
+    margin-bottom: 8px;
+
+}
 
 
 
 
+.journey-item p {
 
+    color: var(--text);
 
+    font-size: 10px;
 
+    line-height: 1.8;
 
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
