@@ -2255,9 +2255,9 @@ section {
 
 
 
-* =========================================================
+/* =========================================================
    31. BUSINESS CARD TOP
-========================================================= */
+=========================================================  */
 
 .business-card-top {
 
@@ -2313,29 +2313,89 @@ section {
 
 
 
+/* =========================================================
+   32. BUSINESS PHOTO GALLERY
+========================================================= */
 
 
+.business-photo-gallery {
 
+    display: grid;
 
+    grid-template-columns:
+        1.35fr
+        .65fr;
 
+    grid-template-rows:
+        125px
+        125px;
 
+    gap: 6px;
 
+    margin-bottom: 23px;
 
+}
 
+.business-photo {
 
+    overflow: hidden;
 
+    position: relative;
 
+    background: #111;
 
+}
 
+.business-photo:first-child {
 
+    grid-row:
+        1 / 3;
 
+}
 
+.business-photo::after {
 
+    content: "";
 
+    position: absolute;
 
+    inset: 0;
 
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.3),
+            transparent
+        );
 
+    pointer-events: none;
 
+}
+
+.business-photo img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 1s var(--ease),
+        filter .7s ease;
+
+}
+
+.business-card:hover
+.business-photo img {
+
+    transform:
+        scale(1.07);
+
+    filter:
+        brightness(.78)
+        contrast(1.08);
+
+}
 
 
 
