@@ -2400,12 +2400,37 @@ section {
 
 
 
+/* =========================================================
+   33. BUSINESS TITLE
+========================================================= */
 
+.business-card h3 {
 
+    font-family: var(--serif);
 
+    font-size: 31px;
 
+    line-height: 1;
 
+    font-weight: 500;
 
+    color: var(--white);
+
+    margin-bottom: 10px;
+
+}
+
+.business-card > p {
+
+    color: var(--text);
+
+    font-size: 11px;
+
+    line-height: 1.8;
+
+    max-width: 500px;
+
+}
 
 
 
