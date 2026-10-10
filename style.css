@@ -2487,16 +2487,37 @@ section {
 
 
 
+/* =========================================================
+   35. JOURNEY
+========================================================= */
+
+
+
+.journey-section {
+
+    padding:
+        100px 0
+        110px;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(201,150,63,.045),
+            transparent 40%
+        );
+
+}
 
 
 
 
+.journey-heading {
 
+    margin:
+        45px 0
+        65px 180px;
 
-
-
-
-
+}
 
 
 
