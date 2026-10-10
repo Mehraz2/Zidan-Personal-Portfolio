@@ -2435,12 +2435,53 @@ section {
 
 
 
+/* =========================================================
+   34. BUSINESS LINK
+========================================================= */
 
+.business-link {
 
+    display: inline-flex;
 
+    align-items: center;
 
+    gap: 15px;
 
+    margin-top: 20px;
 
+    padding-bottom: 5px;
+
+    border-bottom:
+        1px solid
+        var(--gold-dark);
+
+    color: var(--gold-light);
+
+    font-size: 9px;
+
+    letter-spacing: 1.4px;
+
+    text-transform: uppercase;
+
+    transition:
+        gap .4s var(--ease),
+        color .3s ease;
+
+}
+
+.business-link span {
+
+    font-size: 15px;
+
+}
+
+.business-link:hover {
+
+    gap: 22px;
+
+    color: var(--white);
+
+}
 
 
 
