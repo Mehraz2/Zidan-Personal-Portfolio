@@ -2523,10 +2523,10 @@ section {
 
 
 
+
 /* =========================================================
    36. JOURNEY GRID
 ========================================================= */
-
 
 .journey-grid {
 
@@ -2539,8 +2539,6 @@ section {
         1px solid var(--line);
 
 }
-
-
 
 .journey-item {
 
@@ -2560,15 +2558,11 @@ section {
 
 }
 
-
-
 .journey-item:last-child {
 
     border-right: none;
 
 }
-
-
 
 .journey-item:hover {
 
@@ -2579,7 +2573,6 @@ section {
         translateY(-7px);
 
 }
-
 
 .journey-number {
 
@@ -2595,10 +2588,6 @@ section {
 
 }
 
-
-
-
-
 .journey-item h3 {
 
     font-family: var(--serif);
@@ -2613,9 +2602,6 @@ section {
 
 }
 
-
-
-
 .journey-item p {
 
     color: var(--text);
@@ -2627,12 +2613,39 @@ section {
 }
 
 
+/* JOURNEY GOLD DOT */
 
+.journey-item::before {
 
+    content: "";
 
+    position: absolute;
 
+    top: -4px;
+    left: 24px;
 
+    width: 7px;
+    height: 7px;
 
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    box-shadow:
+        0 0 15px
+        rgba(201,150,63,.5);
+
+    transition:
+        transform .4s var(--ease);
+
+}
+
+.journey-item:hover::before {
+
+    transform:
+        scale(1.7);
+
+}
 
 
 
