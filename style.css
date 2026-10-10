@@ -2171,20 +2171,85 @@ section {
 
 
 
+/* =========================================================
+   30. BUSINESS CARD
+========================================================= */
 
+.business-card {
 
+    position: relative;
 
+    padding:
+        27px;
 
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.025),
+            rgba(201,150,63,.015)
+        );
 
+    border:
+        1px solid
+        var(--line-light);
 
+    overflow: hidden;
 
+    transition:
+        transform .7s var(--ease),
+        border-color .5s ease,
+        box-shadow .6s ease;
 
+}
 
+.business-card::before {
 
+    content: "";
 
+    position: absolute;
 
+    width: 220px;
+    height: 220px;
 
+    top: -140px;
+    right: -120px;
 
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(201,150,63,.12),
+            transparent 70%
+        );
+
+    filter: blur(10px);
+
+    transition:
+        transform .8s var(--ease);
+
+}
+
+.business-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(201,150,63,.42);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.35);
+
+}
+
+.business-card:hover::before {
+
+    transform:
+        scale(1.5);
+
+}
 
 
 
