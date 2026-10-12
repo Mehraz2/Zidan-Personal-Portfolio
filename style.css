@@ -3253,11 +3253,41 @@ section {
 
 
 
+/* =========================================================
+   44. QUOTE
+========================================================= */
 
+.quote {
 
+    color: var(--gold);
 
+    font-family: Georgia, serif;
 
+    font-size: 55px;
 
+    line-height: .5;
+
+    margin-bottom: 22px;
+
+}
+
+.testimonial-card > p {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: #b9b3a9;
+
+    font-family: var(--serif);
+
+    font-size: 21px;
+
+    font-style: italic;
+
+    line-height: 1.25;
+
+}
 
 
 
