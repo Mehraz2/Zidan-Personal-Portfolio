@@ -3132,12 +3132,122 @@ section {
 
 
 
+/* =========================================================
+   43. TESTIMONIAL CARD
+========================================================= */
 
+.testimonial-card {
 
+    position: relative;
 
+    min-height: 275px;
 
+    padding:
+        35px 30px;
 
+    background:
 
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.025),
+            rgba(201,150,63,.018)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.06);
+
+    overflow: hidden;
+
+    transition:
+        transform .65s var(--ease),
+        border-color .5s ease,
+        box-shadow .6s ease;
+
+}
+
+.testimonial-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    right: -100px;
+    top: -100px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(201,150,63,.12),
+            transparent 70%
+        );
+
+    filter: blur(10px);
+
+    transition:
+        transform .8s var(--ease);
+
+}
+
+.testimonial-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 50%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.035),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+    transition:
+        left .9s var(--ease);
+
+}
+
+.testimonial-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(201,150,63,.35);
+
+    box-shadow:
+        0 25px 60px
+        rgba(0,0,0,.3);
+
+}
+
+.testimonial-card:hover::before {
+
+    transform:
+        scale(1.6);
+
+}
+
+.testimonial-card:hover::after {
+
+    left: 140%;
+
+}
 
 
 
