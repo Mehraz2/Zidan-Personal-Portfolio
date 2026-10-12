@@ -2938,19 +2938,66 @@ section {
 
 
 
+/* =========================================================
+   40. PERSONAL HOBBY
+========================================================= */
 
+.personal-hobby {
 
+    display: flex;
 
+    align-items: center;
 
+    gap: 17px;
 
+    width: 100%;
 
+    max-width: 430px;
 
+    padding:
+        13px 0;
 
+    border-bottom:
+        1px solid
+        var(--line);
 
+    transition:
+        padding-left .4s var(--ease);
 
+}
 
+.personal-hobby:hover {
 
+    padding-left: 10px;
 
+}
+
+.personal-hobby span {
+
+    width: 30px;
+    height: 30px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid
+        var(--gold-dark);
+
+    font-size: 13px;
+
+}
+
+.personal-hobby strong {
+
+    color: var(--white-soft);
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+}
 
 
 
