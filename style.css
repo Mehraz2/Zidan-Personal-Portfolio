@@ -2876,13 +2876,63 @@ section {
 
 
 
+/* =========================================================
+   39. PERSONAL SECTION
+========================================================= */
 
+.personal-section {
 
+    padding:
+        100px 0
+        110px;
 
+}
 
+.personal-content {
 
+    display: grid;
 
+    grid-template-columns:
+        1fr
+        .9fr;
 
+    gap: 90px;
+
+    align-items: center;
+
+}
+
+.personal-text {
+
+    position: relative;
+
+}
+
+.personal-text .section-label {
+
+    margin-bottom: 25px;
+
+}
+
+.personal-text .section-heading {
+
+    margin-bottom: 28px;
+
+}
+
+.personal-text > p {
+
+    max-width: 550px;
+
+    color: var(--text);
+
+    font-size: 12px;
+
+    line-height: 1.9;
+
+    margin-bottom: 30px;
+
+}
 
 
 
