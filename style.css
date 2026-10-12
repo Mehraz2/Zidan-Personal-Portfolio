@@ -3070,17 +3070,63 @@ section {
 
 
 
+/* =========================================================
+   42. TESTIMONIALS
+========================================================= */
+
+
+.testimonial-section {
+
+    padding:
+        100px 0
+        120px;
+
+}
+
+
+.testimonial-section
+.section-heading {
+
+    margin:
+        40px 0
+        60px;
+
+}
 
 
 
 
+/* =========================================================
+   42. TESTIMONIALS
+========================================================= */
 
+.testimonial-section {
 
+    padding:
+        100px 0
+        120px;
 
+}
 
+.testimonial-section
+.section-heading {
 
+    margin:
+        40px 0
+        60px;
 
+}
 
+.testimonial-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
 
 
 
