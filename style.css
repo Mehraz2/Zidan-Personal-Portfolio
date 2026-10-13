@@ -3792,14 +3792,56 @@ section {
 
 
 
+
 /* =========================================================
    54. FOOTER COLUMN
 ========================================================= */
 
+.footer-column h4 {
+
+    color: var(--gold-light);
+
+    font-size: 8px;
+
+    letter-spacing: 2.3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 18px;
+
+}
+
+.footer-column a {
+
+    display: block;
+
+    width: max-content;
+
+    color: var(--text-dark);
+
+    font-size: 9px;
+
+    margin-bottom: 8px;
+
+    transition:
+        color .3s ease,
+        transform .35s var(--ease);
+
+}
+
+.footer-column a:hover {
+
+    color: var(--gold-light);
+
+    transform:
+        translateX(6px);
+
+}
 
 
-
-
+/* =========================================================
+   55. FOOTER BOTTOM
+========================================================= */
 
 
 
