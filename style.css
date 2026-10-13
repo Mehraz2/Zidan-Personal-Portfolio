@@ -3442,12 +3442,24 @@ section {
    47. CONTACT CONTAINER
 ========================================================= */
 
+.contact-container {
+
+    display: grid;
+
+    grid-template-columns:
+        .85fr
+        1.15fr;
+
+    gap: 90px;
+
+    align-items: center;
+
+}
 
 
-
-
-
-
+/* =========================================================
+   48. CONTACT CONTENT
+========================================================= */
 
 
 
