@@ -3461,12 +3461,59 @@ section {
    48. CONTACT CONTENT
 ========================================================= */
 
+.contact-content {
 
+    position: relative;
 
+    z-index: 2;
 
+}
 
+.contact-content .section-label {
 
+    margin-bottom: 25px;
 
+}
+
+.contact-content h2 {
+
+    font-family: var(--serif);
+
+    font-size: clamp(
+        50px,
+        5.3vw,
+        76px
+    );
+
+    line-height: .86;
+
+    font-weight: 400;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 25px;
+
+}
+
+.contact-content h2 span {
+
+    color: var(--gold-light);
+
+    font-style: italic;
+
+}
+
+.contact-content > p:last-child {
+
+    max-width: 440px;
+
+    color: var(--text);
+
+    font-size: 11px;
+
+    line-height: 1.9;
+
+}
 
 
 
