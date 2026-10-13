@@ -3715,14 +3715,27 @@ section {
 
 }
 
-
 /* =========================================================
    52. FOOTER CONTAINER
 ========================================================= */
 
+.footer-container {
 
+    display: grid;
 
+    grid-template-columns:
+        1.4fr
+        .8fr
+        .9fr
+        1fr;
 
+    gap: 60px;
+
+    padding:
+        60px 0
+        50px;
+
+}
 
 
 
