@@ -3839,14 +3839,45 @@ section {
 }
 
 
+
 /* =========================================================
    55. FOOTER BOTTOM
 ========================================================= */
 
+.footer-bottom {
+
+    width: min(
+        calc(100% - 80px),
+        var(--container)
+    );
+
+    margin-inline: auto;
+
+    padding:
+        18px 0;
+
+    border-top:
+        1px solid
+        var(--line);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    color: #504d46;
+
+    font-size: 8px;
+
+    letter-spacing: .5px;
+
+}
 
 
-
-
+/* =========================================================
+   56. CSS-ONLY SCROLL REVEAL
+========================================================= */
 
 
 
