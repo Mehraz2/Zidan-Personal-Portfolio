@@ -3909,10 +3909,151 @@ section {
 }
 
 
+/* MODERN SCROLL TIMELINE */
+
+@supports (animation-timeline: view()) {
+
+    .about-section .about-main {
+
+        animation:
+            scrollRevealUp
+            linear both;
+
+        animation-timeline:
+            view();
+
+        animation-range:
+            entry 5%
+            cover 30%;
+
+    }
+
+    .about-highlights {
+
+        animation:
+            scrollRevealUp
+            linear both;
+
+        animation-timeline:
+            view();
+
+        animation-range:
+            entry 5%
+            cover 35%;
+
+    }
+
+    .business-card {
+
+        animation:
+            scrollRevealUp
+            linear both;
+
+        animation-timeline:
+            view();
+
+        animation-range:
+            entry 5%
+            cover 28%;
+
+    }
+
+    .journey-item {
+
+        animation:
+            scrollRevealUp
+            linear both;
+
+        animation-timeline:
+            view();
+
+        animation-range:
+            entry 5%
+            cover 30%;
+
+    }
+
+    .featured-image {
+
+        animation:
+            scrollRevealUp
+            linear both;
+
+        animation-timeline:
+            view();
+
+        animation-range:
+            entry 5%
+            cover 30%;
+
+    }
+
+    .featured-content {
+
+        animation:
+            scrollRevealUp
+            linear both;
+
+        animation-timeline:
+            view();
+
+        animation-range:
+            entry 10%
+            cover 35%;
+
+    }
+
+    .personal-text {
+
+        animation:
+            scrollRevealUp
+            linear both;
+
+        animation-timeline:
+            view();
+
+        animation-range:
+            entry 5%
+            cover 30%;
+
+    }
+
+    .personal-image {
+
+        animation:
+            scrollRevealUp
+            linear both;
+
+        animation-timeline:
+            view();
+
+        animation-range:
+            entry 5%
+            cover 30%;
+
+    }
+
+    .testimonial-card {
+
+        animation:
+            scrollRevealUp
+            linear both;
+
+        animation-timeline:
+            view();
+
+        animation-range:
+            entry 5%
+            cover 30%;
+
+    }
+
+}
 
 
-
-
+/* =========================================================
+   57. TESTIMONIAL DIRECTION ANIMATION
+========================================================= */
 
 
 
