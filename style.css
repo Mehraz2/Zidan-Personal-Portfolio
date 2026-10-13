@@ -3740,21 +3740,61 @@ section {
 
 
 
+/* =========================================================
+   53. FOOTER BRAND
+========================================================= */
+
+.footer-logo {
+
+    display: inline-block;
+
+    font-family: var(--serif);
+
+    font-size: 52px;
+
+    font-weight: 500;
+
+    color: var(--gold-light);
+
+    line-height: 1;
+
+    transition:
+        transform .4s var(--ease);
+
+}
+
+.footer-logo span {
+
+    color: var(--white);
+
+}
+
+.footer-logo:hover {
+
+    transform:
+        translateY(-5px);
+
+}
+
+.footer-brand p {
+
+    max-width: 270px;
+
+    color: var(--text-dark);
+
+    font-size: 10px;
+
+    line-height: 1.8;
+
+    margin-top: 15px;
+
+}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* =========================================================
+   54. FOOTER COLUMN
+========================================================= */
 
 
 
