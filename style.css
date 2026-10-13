@@ -3626,7 +3626,141 @@ section {
 
 
 
-
 /* =========================================================
    50. CONTACT BUTTON
 ========================================================= */
+
+.contact-btn {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    min-width: 160px;
+
+    min-height: 46px;
+
+    border: none;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dfb362,
+            #9f6d28
+        );
+
+    color: #090806;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+
+    text-transform: uppercase;
+
+    transition:
+        transform .4s var(--ease),
+        box-shadow .4s ease;
+
+}
+
+.contact-btn span {
+
+    font-size: 15px;
+
+    transition:
+        transform .4s var(--ease);
+
+}
+
+.contact-btn:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(201,150,63,.22);
+
+}
+
+.contact-btn:hover span {
+
+    transform:
+        translate(4px,-4px);
+
+}
+
+
+/* =========================================================
+   51. FOOTER
+========================================================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
