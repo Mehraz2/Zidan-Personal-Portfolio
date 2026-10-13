@@ -4120,3 +4120,26 @@ section {
 /* =========================================================
    58. BUSINESS CARD STAGGER
 ========================================================= */
+
+.business-card:nth-child(2) {
+
+    transition-delay: .08s;
+
+}
+
+.business-card:nth-child(3) {
+
+    transition-delay: .16s;
+
+}
+
+.business-card:nth-child(4) {
+
+    transition-delay: .24s;
+
+}
+
+
+/* =========================================================
+   59. JOURNEY STAGGER
+========================================================= */
