@@ -3362,25 +3362,85 @@ section {
 
 
 
+/* =========================================================
+   46. CONTACT
+========================================================= */
+
+.contact-section {
+
+    padding:
+        100px 0
+        105px;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(201,150,63,.09),
+            transparent 25%
+        );
+
+}
+
+.contact-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    left: -250px;
+    bottom: -300px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(201,150,63,.12),
+            transparent 68%
+        );
+
+    filter:
+        blur(15px);
+
+    animation:
+        contactLight
+        10s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+@keyframes contactLight {
+
+    from {
+
+        transform:
+            translateY(30px)
+            scale(.9);
+
+    }
+
+    to {
+
+        transform:
+            translateY(-60px)
+            scale(1.15);
+
+    }
+
+}
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* =========================================================
+   47. CONTACT CONTAINER
+========================================================= */
 
 
 
