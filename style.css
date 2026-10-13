@@ -3518,19 +3518,115 @@ section {
 
 
 
+/* =========================================================
+   49. CONTACT FORM
+========================================================= */
+
+.contact-form {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+.form-row {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 10px;
+
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+
+    width: 100%;
+
+    background:
+        rgba(255,255,255,.015);
+
+    border:
+        1px solid
+        rgba(255,255,255,.13);
+
+    outline: none;
+
+    color: var(--white);
+
+    padding:
+        15px 16px;
+
+    font-size: 10px;
+
+    transition:
+        border-color .4s ease,
+        background .4s ease,
+        box-shadow .4s ease;
+
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+
+    color: #68645c;
+
+}
+
+.contact-form select {
+
+    color: #777269;
+
+}
+
+.contact-form select option {
+
+    background:
+        #11100d;
+
+    color:
+        var(--white);
+
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+
+    border-color:
+        rgba(201,150,63,.65);
+
+    background:
+        rgba(201,150,63,.025);
+
+    box-shadow:
+        0 0 25px
+        rgba(201,150,63,.04);
+
+}
+
+.contact-form textarea {
+
+    display: block;
+
+    min-height: 125px;
+
+    resize: vertical;
+
+    margin-bottom: 10px;
+
+}
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+/* =========================================================
+   50. CONTACT BUTTON
+========================================================= */
