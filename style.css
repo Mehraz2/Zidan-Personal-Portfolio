@@ -5271,15 +5271,74 @@ section {
 
 }
 
-
 /* =========================================================
    66. VERY SMALL PHONE
 ========================================================= */
 
+@media (max-width: 390px) {
 
+    .hero-section {
 
+        min-height:
+            750px;
 
+    }
 
+    .hero-title {
+
+        font-size:
+            56px;
+
+    }
+
+    .hero-subtitle {
+
+        font-size:
+            21px;
+
+    }
+
+    .hero-description {
+
+        font-size:
+            9.5px;
+
+    }
+
+    .hero-image {
+
+        width:
+            105vw;
+
+        right:
+            -34%;
+
+    }
+
+    .section-heading {
+
+        font-size:
+            42px;
+
+    }
+
+    .business-photo-gallery {
+
+        grid-template-rows:
+            90px
+            90px;
+
+    }
+
+    .featured-content h2,
+    .contact-content h2 {
+
+        font-size:
+            43px;
+
+    }
+
+}
 
 
 
