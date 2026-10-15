@@ -5345,9 +5345,40 @@ section {
 
 
 
+/* =========================================================
+   67. PERFORMANCE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .hero-section .hero-container::before,
+    .hero-section .hero-container::after {
+
+        animation-duration:
+            9s;
+
+    }
+
+    body::before {
+
+        animation-duration:
+            25s;
+
+    }
+
+    body::after {
+
+        animation-duration:
+            16s;
+
+    }
+
+}
 
 
-
+/* =========================================================
+   68. REDUCED MOTION
+========================================================= */
 
 
 
