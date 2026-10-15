@@ -4306,6 +4306,30 @@ section {
    62. IMAGE LOADING FEEL
 ========================================================= */
 
+.hero-image img,
+.featured-image img,
+.personal-image img,
+.business-photo img {
+
+    backface-visibility: hidden;
+
+}
+
+
+/* =========================================================
+   63. TABLET
+========================================================= */
+
+
+
+
+
+
+
+
+
+
+
 
 
 
