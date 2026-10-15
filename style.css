@@ -4168,7 +4168,278 @@ section {
 
 }
 
-
 /* =========================================================
    60. DECORATIVE GOLD SHINE
 ========================================================= */
+
+.business-card,
+.featured-business,
+.testimonial-card,
+.personal-image {
+
+    isolation: isolate;
+
+}
+
+.business-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -130%;
+
+    width: 60%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.035),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+    transition:
+        left .9s var(--ease);
+
+    pointer-events: none;
+
+}
+
+.business-card:hover::after {
+
+    left: 140%;
+
+}
+
+
+/* =========================================================
+   61. FLOATING GOLD ORBS
+========================================================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
