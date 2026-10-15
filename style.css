@@ -4320,9 +4320,80 @@ section {
    63. TABLET
 ========================================================= */
 
+@media (max-width: 1100px) {
+
+    .header {
+
+        padding-inline: 25px;
+
+    }
+
+    .section-container,
+    .hero-container,
+    .footer-container,
+    .contact-container {
+
+        width:
+            calc(100% - 50px);
+
+    }
+
+    .navbar {
+
+        gap: 22px;
+
+    }
+
+    .hero-content {
+
+        padding-left: 40px;
+
+    }
+
+    .hero-title {
+
+        font-size: 85px;
+
+    }
+
+    .hero-image {
+
+        width: 55%;
+
+        right: -6%;
+
+    }
+
+    .about-content {
+
+        gap: 50px;
+
+    }
+
+    .journey-heading {
+
+        margin-left: 100px;
+
+    }
+
+    .featured-content {
+
+        padding: 45px;
+
+    }
+
+    .contact-container {
+
+        gap: 50px;
+
+    }
+
+}
 
 
-
+/* =========================================================
+   64. TABLET / SMALL LAPTOP
+========================================================= */
 
 
 
