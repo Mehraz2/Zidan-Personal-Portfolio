@@ -4019,13 +4019,91 @@ section {
    61. FLOATING GOLD ORBS
 ========================================================= */
 
+.hero-section .hero-container::before,
+.hero-section .hero-container::after {
+
+    content: "";
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+}
+
+.hero-section .hero-container::before {
+
+    width: 4px;
+    height: 4px;
+
+    right: 31%;
+    top: 25%;
+
+    background: var(--gold);
+
+    box-shadow:
+        0 0 15px
+        rgba(201,150,63,.8);
+
+    animation:
+        floatingOrb
+        6s
+        ease-in-out
+        infinite;
+
+}
+
+.hero-section .hero-container::after {
+
+    width: 3px;
+    height: 3px;
+
+    right: 15%;
+    top: 55%;
+
+    background: var(--gold-light);
+
+    animation:
+        floatingOrb
+        8s
+        1s
+        ease-in-out
+        infinite;
+
+}
 
 
 
+@keyframes floatingOrb {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            scale(.8);
+
+        opacity: .3;
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-35px)
+            scale(1.4);
+
+        opacity: 1;
+
+    }
+
+}
 
 
-
-
+/* =========================================================
+   62. IMAGE LOADING FEEL
+========================================================= */
 
 
 
