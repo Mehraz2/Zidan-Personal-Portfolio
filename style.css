@@ -5215,17 +5215,36 @@ section {
 ========================================================= */
 
 
+.reveal-up {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+}
+
+@supports (animation-timeline: view()) {
+    .reveal-up {
+        animation: revealBottomToTop linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 45%;
+    }
+}
 
 
 
 
 
+/* ৩. Premium animation pack — 70 থেকে 77
+এবার CSS ফাইলের একদম শেষে নিচের সম্পূর্ণ block যোগ করো। 
+এখানে আগের gold-black design-এর সঙ্গে আরও cinematic motion, 
+soft glow, animated typography, card effects এবং mobile-friendly movement যোগ করা হয়েছে। */
 
 
 
 
 
-
+/* =========================================================
+   70. CINEMATIC GOLD ATMOSPHERE
+========================================================= */
 
 
 
