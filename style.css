@@ -4357,13 +4357,725 @@ section {
 
 }
 
-
 /* =========================================================
    65. MOBILE
 ========================================================= */
 
+@media (max-width: 700px) {
+
+    /* -------------------------
+       GLOBAL
+    ------------------------- */
+
+    .section-container,
+    .hero-container,
+    .footer-container,
+    .contact-container {
+
+        width:
+            calc(100% - 34px);
+
+    }
 
 
+    /* -------------------------
+       HEADER
+    ------------------------- */
+
+    .header {
+
+        height: 72px;
+
+        padding-inline: 17px;
+
+    }
+
+    .logo {
+
+        font-size: 27px;
+
+    }
+
+    .navbar {
+
+        display: none;
+
+    }
+
+    .nav-btn {
+
+        padding:
+            9px 11px;
+
+        font-size: 7px;
+
+    }
+
+
+    /* -------------------------
+       HERO
+    ------------------------- */
+
+    .hero-section {
+
+        min-height: 780px;
+
+        align-items: flex-start;
+
+        padding-top: 130px;
+
+    }
+
+    .hero-container {
+
+        min-height: 650px;
+
+        align-items: flex-start;
+
+    }
+
+    .hero-section::before {
+
+        left: 17px;
+
+        top: 39%;
+
+        height: 145px;
+
+    }
+
+    .hero-section::after {
+
+        left: 14px;
+
+        top: 38.5%;
+
+    }
+
+    .hero-content {
+
+        width: 100%;
+
+        padding-left: 28px;
+
+        padding-top: 0;
+
+        z-index: 6;
+
+    }
+
+    .hero-tagline {
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 18px;
+
+    }
+
+    .hero-title {
+
+        font-size:
+            clamp(
+                59px,
+                17vw,
+                82px
+            );
+
+        line-height: .8;
+
+        letter-spacing:
+            -2.5px;
+
+        margin-bottom: 22px;
+
+    }
+
+    .hero-subtitle {
+
+        font-size: 24px;
+
+        line-height: 1;
+
+        max-width: 280px;
+
+        margin-bottom: 20px;
+
+    }
+
+    .hero-description {
+
+        max-width: 330px;
+
+        font-size: 10px;
+
+        line-height: 1.8;
+
+    }
+
+    .hero-buttons {
+
+        flex-wrap: wrap;
+
+        gap: 14px;
+
+        margin-top: 25px;
+
+    }
+
+    .hero-btn {
+
+        min-height: 43px;
+
+        padding:
+            0 15px;
+
+        font-size: 7.5px;
+
+    }
+
+    .hero-image {
+
+        width: 93vw;
+
+        max-width: 480px;
+
+        right: -25%;
+
+        bottom: -5px;
+
+        opacity: .64;
+
+        z-index: 2;
+
+    }
+
+    .hero-image-wrapper::before {
+
+        width: 78%;
+
+        left: 11%;
+
+        top: 3%;
+
+    }
+
+    .hero-image-wrapper::after {
+
+        width: 88%;
+
+        left: 6%;
+
+    }
+
+
+    /* -------------------------
+       SECTION LABEL
+    ------------------------- */
+
+    .section-label-box {
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+
+    }
+
+    .section-number {
+
+        font-size: 15px;
+
+    }
+
+
+    /* -------------------------
+       SECTION HEADING
+    ------------------------- */
+
+    .section-heading {
+
+        font-size:
+            clamp(
+                43px,
+                13vw,
+                62px
+            );
+
+        letter-spacing:
+            -1.5px;
+
+    }
+
+
+    /* -------------------------
+       ABOUT
+    ------------------------- */
+
+    .about-section {
+
+        padding:
+            70px 0
+            75px;
+
+    }
+
+    .about-content {
+
+        margin-top: 38px;
+
+    }
+
+    .about-main::before {
+
+        display: none;
+
+    }
+
+    .about-main .section-heading {
+
+        margin-bottom: 25px;
+
+    }
+
+    .about-main > p {
+
+        font-size: 10.5px;
+
+        line-height: 1.85;
+
+    }
+
+    .personal-info {
+
+        grid-template-columns:
+            1fr;
+
+        margin-top: 35px;
+
+    }
+
+    .info-item {
+
+        padding:
+            16px 0;
+
+    }
+
+    .hobby-box {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        gap: 8px;
+
+    }
+
+    .hobby-title {
+
+        margin-bottom: 5px;
+
+    }
+
+    .hobby {
+
+        width: 100%;
+
+    }
+
+    .highlight-item {
+
+        grid-template-columns:
+            42px
+            1fr;
+
+        gap: 14px;
+
+        padding:
+            19px 0;
+
+    }
+
+    .highlight-item h3 {
+
+        font-size: 20px;
+
+    }
+
+
+    /* -------------------------
+       BUSINESS
+    ------------------------- */
+
+    .business-section {
+
+        padding:
+            70px 0
+            80px;
+
+    }
+
+    .section-header {
+
+        display: block;
+
+        margin-bottom: 40px;
+
+    }
+
+    .section-header .section-heading {
+
+        margin-top: 30px;
+
+    }
+
+    .business-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 20px;
+
+    }
+
+    .business-card {
+
+        padding:
+            19px;
+
+    }
+
+    .business-photo-gallery {
+
+        grid-template-columns:
+            1.35fr
+            .65fr;
+
+        grid-template-rows:
+            105px
+            105px;
+
+    }
+
+    .business-card h3 {
+
+        font-size: 28px;
+
+    }
+
+    .business-card > p {
+
+        font-size: 10px;
+
+    }
+
+
+    /* -------------------------
+       JOURNEY
+    ------------------------- */
+
+    .journey-section {
+
+        padding:
+            70px 0
+            80px;
+
+    }
+
+    .journey-heading {
+
+        margin:
+            35px 0
+            45px;
+
+    }
+
+    .journey-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .journey-item {
+
+        min-height:
+            190px;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid var(--line);
+
+    }
+
+    .journey-item:last-child {
+
+        border-bottom: none;
+
+    }
+
+    .journey-item:nth-child(1),
+    .journey-item:nth-child(2) {
+
+        border-bottom:
+            1px solid var(--line);
+
+    }
+
+    .journey-number {
+
+        margin-bottom:
+            25px;
+
+    }
+
+
+    /* -------------------------
+       FEATURED
+    ------------------------- */
+
+    .featured-section {
+
+        padding:
+            70px 0
+            80px;
+
+    }
+
+    .featured-business {
+
+        margin-top:
+            40px;
+
+    }
+
+    .featured-image {
+
+        min-height:
+            370px;
+
+    }
+
+    .featured-content {
+
+        padding:
+            40px 25px
+            45px;
+
+    }
+
+    .featured-content h2 {
+
+        font-size:
+            49px;
+
+    }
+
+
+    /* -------------------------
+       PERSONAL
+    ------------------------- */
+
+    .personal-section {
+
+        padding:
+            70px 0
+            80px;
+
+    }
+
+    .personal-content {
+
+        gap: 45px;
+
+    }
+
+    .personal-text > p {
+
+        font-size:
+            10.5px;
+
+    }
+
+    .personal-image {
+
+        padding:
+            9px;
+
+    }
+
+
+    /* -------------------------
+       TESTIMONIAL
+    ------------------------- */
+
+    .testimonial-section {
+
+        padding:
+            70px 0
+            80px;
+
+    }
+
+    .testimonial-section
+    .section-heading {
+
+        margin:
+            35px 0
+            45px;
+
+    }
+
+    .testimonial-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 16px;
+
+    }
+
+    .testimonial-card {
+
+        min-height:
+            235px;
+
+        padding:
+            28px 23px;
+
+    }
+
+    .testimonial-card > p {
+
+        font-size:
+            19px;
+
+    }
+
+
+    /* -------------------------
+       CONTACT
+    ------------------------- */
+
+    .contact-section {
+
+        padding:
+            70px 0
+            75px;
+
+    }
+
+    .contact-container {
+
+        gap:
+            45px;
+
+    }
+
+    .contact-content h2 {
+
+        font-size:
+            49px;
+
+    }
+
+    .form-row {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            10px;
+
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+
+        font-size:
+            10px;
+
+        padding:
+            14px;
+
+    }
+
+    .contact-form textarea {
+
+        min-height:
+            130px;
+
+    }
+
+    .contact-btn {
+
+        width:
+            100%;
+
+    }
+
+
+    /* -------------------------
+       FOOTER
+    ------------------------- */
+
+    .footer-container {
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:
+            35px 20px;
+
+        padding:
+            45px 0;
+
+    }
+
+    .footer-brand {
+
+        grid-column:
+            1 / -1;
+
+    }
+
+    .footer-logo {
+
+        font-size:
+            45px;
+
+    }
+
+    .footer-bottom {
+
+        width:
+            calc(100% - 34px);
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        gap:
+            7px;
+
+        padding:
+            17px 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   66. VERY SMALL PHONE
+========================================================= */
 
 
 
