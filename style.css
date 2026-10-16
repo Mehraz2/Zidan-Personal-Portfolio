@@ -4107,6 +4107,14 @@ section {
 
 
 
+.hero-image img,
+.featured-image img,
+.personal-image img,
+.business-photo img {
+
+    backface-visibility: hidden;
+
+}
 
 
 
