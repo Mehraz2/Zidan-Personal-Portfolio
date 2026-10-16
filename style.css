@@ -4193,11 +4193,174 @@ section {
 }
 
 
-/* =========================================================
+/* =========================================================/* =========================================================
    64. TABLET / SMALL LAPTOP
 ========================================================= */
 
+@media (max-width: 900px) {
 
+    .header {
+
+        height: 80px;
+
+    }
+
+    .navbar {
+
+        gap: 16px;
+
+    }
+
+    .navbar a {
+
+        font-size: 8px;
+
+    }
+
+    .nav-btn {
+
+        padding:
+            10px 13px;
+
+    }
+
+    .hero-section,
+    .hero-container {
+
+        min-height: 720px;
+
+    }
+
+    .hero-content {
+
+        width: 60%;
+
+        padding-left: 25px;
+
+    }
+
+    .hero-title {
+
+        font-size: 75px;
+
+    }
+
+    .hero-image {
+
+        width: 52%;
+
+    }
+
+    .about-content {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 60px;
+
+    }
+
+    .about-highlights {
+
+        max-width: 700px;
+
+    }
+
+    .journey-heading {
+
+        margin-left: 0;
+
+    }
+
+    .journey-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+    .journey-item:nth-child(2) {
+
+        border-right: none;
+
+    }
+
+    .journey-item:nth-child(1),
+    .journey-item:nth-child(2) {
+
+        border-bottom:
+            1px solid var(--line);
+
+    }
+
+    .featured-business {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .featured-image {
+
+        min-height: 450px;
+
+    }
+
+    .featured-image::after {
+
+        background:
+            linear-gradient(
+                to bottom,
+                transparent 50%,
+                #0c0b09 100%
+            );
+
+    }
+
+    .personal-content {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 60px;
+
+    }
+
+    .personal-image {
+
+        max-width: 600px;
+
+    }
+
+    .testimonial-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+    .contact-container {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 60px;
+
+    }
+
+    .footer-container {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =========================================================
+   65. MOBILE
+========================================================= */
 
 
 
