@@ -5946,8 +5946,27 @@ a:focus-visible {
    84. FEATURED BUSINESS — IMAGE + CONTENT
 ========================================================= */
 
+.featured-image img {
+    transition:
+        transform 1s var(--ease),
+        filter .7s ease;
+}
 
+.featured-business:hover .featured-image img {
+    transform: scale(1.045);
+}
 
+.featured-content .featured-label {
+    transition: color .35s ease;
+}
+
+.featured-business:hover .featured-label {
+    color: var(--gold-light);
+}
+
+/* =========================================================
+   85. PHONE + TABLET
+========================================================= */
 
 
 
