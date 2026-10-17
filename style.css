@@ -5914,10 +5914,37 @@ a:focus-visible {
    83. JOURNEY — GOLD DOT PULSE
 ========================================================= */
 
+@keyframes journeyDotPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(201, 150, 63, .25);
+        opacity: .7;
+    }
 
+    50% {
+        box-shadow: 0 0 0 7px rgba(201, 150, 63, 0);
+        opacity: 1;
+    }
+}
 
+.journey-item::before {
+    animation: journeyDotPulse 3s ease-in-out infinite;
+}
 
+.journey-item:nth-child(2)::before {
+    animation-delay: .3s;
+}
 
+.journey-item:nth-child(3)::before {
+    animation-delay: .6s;
+}
+
+.journey-item:nth-child(4)::before {
+    animation-delay: .9s;
+}
+
+/* =========================================================
+   84. FEATURED BUSINESS — IMAGE + CONTENT
+========================================================= */
 
 
 
