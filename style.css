@@ -5488,10 +5488,77 @@ a:focus-visible {
    77. MOBILE PERFORMANCE + ACCESSIBILITY
 ========================================================= */
 
+@media (max-width: 700px) {
+
+    .hero-image-wrapper {
+        animation-duration: 9s;
+    }
+
+    .hero-image-wrapper::before {
+        animation-duration: 7s;
+    }
+
+    .hero-image-wrapper::after {
+        animation-duration: 16s;
+    }
+
+    .hero-section {
+        animation-duration: 25s;
+    }
+
+    .hero-title span,
+    .section-heading span,
+    .featured-content h2 span {
+        animation-duration: 12s;
+    }
+
+    .business-card,
+    .testimonial-card {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+}
+
+@media (max-width: 390px) {
+
+    .hero-image-wrapper {
+        animation-duration: 11s;
+    }
+
+    .hero-image-wrapper::before {
+        animation-duration: 9s;
+    }
+
+    .hero-image-wrapper::after {
+        animation-duration: 20s;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-section,
+    .hero-image-wrapper,
+    .hero-image-wrapper::before,
+    .hero-image-wrapper::after,
+    .hero-title span,
+    .section-heading span,
+    .featured-content h2 span {
+        animation: none !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
 
 
 
 
+
+/* =========================================================
+   78. ZIDANVERSE — PREMIUM SCROLL ANIMATIONS
+   Original design preserved | No blur reveal
+========================================================= */
 
 
 
