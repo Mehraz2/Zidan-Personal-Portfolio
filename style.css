@@ -5291,6 +5291,49 @@ soft glow, animated typography, card effects এবং mobile-friendly movement 
    71. PREMIUM GOLD TYPOGRAPHY
 ========================================================= */
 
+.hero-title span,
+.section-heading span,
+.featured-content h2 span {
+    background:
+        linear-gradient(
+            110deg,
+            #a87a32 0%,
+            #e2b765 25%,
+            #fff0bd 45%,
+            #c9963f 65%,
+            #e2b765 85%,
+            #a87a32 100%
+        );
+
+    background-size: 250% 100%;
+    background-position: 0% 50%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    animation:
+        goldTextShimmer 8s ease-in-out infinite;
+}
+
+@keyframes goldTextShimmer {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+
+/* =========================================================
+   72. FLOATING HERO PORTRAIT
+========================================================= */
+
+
+
 
 
 
