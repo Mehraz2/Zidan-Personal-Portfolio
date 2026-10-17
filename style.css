@@ -5560,7 +5560,33 @@ a:focus-visible {
    Original design preserved | No blur reveal
 ========================================================= */
 
+/* Keep content visible if scroll-driven animations are unsupported */
 
+.about-section .about-main,
+.about-highlights,
+.info-item,
+.hobby,
+.highlight-item,
+.business-card,
+.journey-item,
+.featured-image,
+.featured-content,
+.personal-text,
+.personal-hobby,
+.personal-image,
+.testimonial-card,
+.contact-content,
+.contact-form,
+.footer-brand,
+.footer-column,
+.reveal-up {
+    clip-path: none;
+    filter: none;
+}
+
+/* =========================================================
+   79. ANIMATION KEYFRAMES
+========================================================= */
 
 
 
