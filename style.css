@@ -5454,21 +5454,39 @@ a:focus-visible {
    76. IMAGE CINEMATIC HOVER
 ========================================================= */
 
+.business-photo img,
+.featured-image img,
+.personal-image img {
+    backface-visibility: hidden;
+    transform-origin: center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .business-photo img {
+        transition:
+            transform 1s var(--ease),
+            filter 0.7s ease;
+    }
+
+    .business-card:hover .business-photo img {
+        transform: scale(1.07);
+    }
+
+    .featured-business:hover .featured-image img {
+        transform: scale(1.055);
+    }
+
+    .personal-image:hover img {
+        transform: scale(1.025);
+    }
+}
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+/* =========================================================
+   77. MOBILE PERFORMANCE + ACCESSIBILITY
+========================================================= */
 
 
 
