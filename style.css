@@ -5968,8 +5968,46 @@ a:focus-visible {
    85. PHONE + TABLET
 ========================================================= */
 
+@media (max-width: 768px) {
 
+    .about-section .about-main,
+    .about-highlights,
+    .info-item,
+    .highlight-item,
+    .business-card,
+    .journey-item,
+    .featured-image,
+    .featured-content,
+    .personal-text,
+    .personal-hobby,
+    .personal-image,
+    .testimonial-card,
+    .contact-content,
+    .contact-form,
+    .footer-brand,
+    .footer-column {
+        animation-duration: 1s;
+    }
 
+    .business-card:hover,
+    .testimonial-card:hover,
+    .journey-item:hover,
+    .hobby:hover {
+        transform: none;
+    }
+
+    .business-card::after {
+        display: none;
+    }
+
+    .journey-item::before {
+        animation-duration: 4s;
+    }
+}
+
+/* =========================================================
+   86. REDUCED MOTION
+========================================================= */
 
 
 
