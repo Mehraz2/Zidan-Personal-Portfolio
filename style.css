@@ -5588,8 +5588,259 @@ a:focus-visible {
    79. ANIMATION KEYFRAMES
 ========================================================= */
 
+@keyframes zidanRise {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 55px, 0);
+    }
 
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
 
+@keyframes zidanFromLeft {
+    from {
+        opacity: 0;
+        transform: translate3d(-55px, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes zidanFromRight {
+    from {
+        opacity: 0;
+        transform: translate3d(55px, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes zidanFadeIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 18px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes zidanPop {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 18px, 0) scale(.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+@keyframes zidanImageReveal {
+    from {
+        opacity: 0;
+        transform: translate3d(-35px, 0, 0) scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+/* =========================================================
+   80. SCROLL-TRIGGERED REVEAL
+   Modern browsers only — content remains visible otherwise
+========================================================= */
+
+@supports (animation-timeline: view()) {
+
+    .about-section .about-main,
+    .personal-text,
+    .contact-content {
+        animation: zidanFromLeft linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 45%;
+    }
+
+    .about-highlights,
+    .personal-image,
+    .contact-form {
+        animation: zidanFromRight linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 45%;
+    }
+
+    .business-card,
+    .personal-hobby,
+    .testimonial-card,
+    .footer-brand,
+    .footer-column {
+        animation: zidanRise linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 40%;
+    }
+
+    .journey-item {
+        animation: zidanFadeIn linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 55%;
+    }
+
+    .featured-image {
+        animation: zidanImageReveal linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 45%;
+    }
+
+    .featured-content {
+        animation: zidanFromRight linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 45%;
+    }
+
+    /* Business cards: one after another */
+
+    .business-card:nth-child(2) {
+        animation-range: entry 0% entry 42%;
+    }
+
+    .business-card:nth-child(3) {
+        animation-range: entry 0% entry 44%;
+    }
+
+    .business-card:nth-child(4) {
+        animation-range: entry 0% entry 46%;
+    }
+
+    /* Journey: staggered fade-in */
+
+    .journey-item:nth-child(1) {
+        animation-range: entry 0% entry 50%;
+    }
+
+    .journey-item:nth-child(2) {
+        animation-range: entry 5% entry 55%;
+    }
+
+    .journey-item:nth-child(3) {
+        animation-range: entry 10% entry 60%;
+    }
+
+    .journey-item:nth-child(4) {
+        animation-range: entry 15% entry 65%;
+    }
+
+    /* Testimonials */
+
+    .testimonial-card:nth-child(3n + 1) {
+        animation-range: entry 0% entry 40%;
+    }
+
+    .testimonial-card:nth-child(3n + 2) {
+        animation-range: entry 5% entry 45%;
+    }
+
+    .testimonial-card:nth-child(3n + 3) {
+        animation-range: entry 10% entry 50%;
+    }
+
+    /* Hobby tags */
+
+    .hobby {
+        animation: zidanPop linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 55%;
+    }
+
+    .hobby:nth-child(2) {
+        animation-range: entry 0% entry 48%;
+    }
+
+    .hobby:nth-child(3) {
+        animation-range: entry 4% entry 52%;
+    }
+
+    .hobby:nth-child(4) {
+        animation-range: entry 8% entry 56%;
+    }
+
+    .hobby:nth-child(5) {
+        animation-range: entry 12% entry 60%;
+    }
+
+    .hobby:nth-child(6) {
+        animation-range: entry 16% entry 64%;
+    }
+
+    .info-item:nth-child(1) {
+        animation: zidanFromLeft linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 45%;
+    }
+
+    .info-item:nth-child(2) {
+        animation: zidanFromRight linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 45%;
+    }
+
+    .info-item:nth-child(3) {
+        animation: zidanRise linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 45%;
+    }
+
+    .info-item:nth-child(4) {
+        animation: zidanRise linear both;
+        animation-timeline: view();
+        animation-range: entry 5% entry 50%;
+    }
+
+    .highlight-item:nth-child(odd) {
+        animation: zidanFromLeft linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 45%;
+    }
+
+    .highlight-item:nth-child(even) {
+        animation: zidanFromRight linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 45%;
+    }
+
+    .personal-hobby:nth-child(2) {
+        animation-range: entry 0% entry 45%;
+    }
+
+    .personal-hobby:nth-child(3) {
+        animation-range: entry 5% entry 50%;
+    }
+
+    .personal-hobby:nth-child(4) {
+        animation-range: entry 10% entry 55%;
+    }
+
+    .personal-hobby:nth-child(5) {
+        animation-range: entry 15% entry 60%;
+    }
+}
+
+/* =========================================================
+   81. BUSINESS CARD — GOLD SWEEP
+========================================================= */
 
 
 
