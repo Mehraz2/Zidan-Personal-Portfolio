@@ -5842,13 +5842,43 @@ a:focus-visible {
    81. BUSINESS CARD — GOLD SWEEP
 ========================================================= */
 
+.business-card {
+    isolation: isolate;
+}
 
+.business-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 55%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
 
+    background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(226, 183, 101, .055),
+        transparent
+    );
 
+    transform: skewX(-18deg);
+    transition: left 1s var(--ease);
+}
 
+.business-card:hover::after {
+    left: 150%;
+}
 
+.business-card > * {
+    position: relative;
+    z-index: 1;
+}
 
-
+/* =========================================================
+   82. HOBBIES — CLEAN POP + GOLD BORDER
+========================================================= */
 
 
 
