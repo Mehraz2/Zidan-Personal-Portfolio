@@ -5880,6 +5880,39 @@ a:focus-visible {
    82. HOBBIES — CLEAN POP + GOLD BORDER
 ========================================================= */
 
+.hobby,
+.personal-hobby {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.hobby {
+    position: relative;
+    overflow: hidden;
+    transition:
+        color .35s ease,
+        border-color .35s ease,
+        background .35s ease,
+        transform .35s var(--ease);
+}
+
+.hobby:hover {
+    color: var(--gold-light);
+    border-color: var(--gold-light);
+    background: rgba(201, 150, 63, .07);
+    transform: translateY(-4px);
+}
+
+.personal-hobby:hover {
+    background: linear-gradient(
+        90deg,
+        rgba(201, 150, 63, .07),
+        transparent
+    );
+}
+
+/* =========================================================
+   83. JOURNEY — GOLD DOT PULSE
+========================================================= */
 
 
 
