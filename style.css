@@ -5246,19 +5246,50 @@ soft glow, animated typography, card effects এবং mobile-friendly movement 
    70. CINEMATIC GOLD ATMOSPHERE
 ========================================================= */
 
+@keyframes goldAtmospherePulse {
+    0%, 100% {
+        opacity: 0.45;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.9;
+        transform: scale(1.08);
+    }
+}
+
+.hero-section,
+.about-section,
+.business-section,
+.journey-section,
+.featured-section,
+.personal-section,
+.testimonial-section,
+.contact-section {
+    isolation: isolate;
+}
+
+.hero-section {
+    background-size: 180% 180%;
+
+    animation:
+        heroBackgroundFlow 18s ease-in-out infinite alternate;
+}
+
+@keyframes heroBackgroundFlow {
+    from {
+        background-position: 0% 50%;
+    }
+
+    to {
+        background-position: 100% 50%;
+    }
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
+/* =========================================================
+   71. PREMIUM GOLD TYPOGRAPHY
+========================================================= */
 
 
 
