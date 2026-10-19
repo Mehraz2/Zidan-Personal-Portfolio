@@ -77,3 +77,17 @@
 
 })();
 
+
+
+
+
+
+   /* ====================================================
+           02. PREMIUM ANIMATION STYLES
+        ==================================================== */
+
+        const style = document.createElement("style");
+
+        style.id = "zv-premium-slow-styles";
+
+        style.textContent = `
