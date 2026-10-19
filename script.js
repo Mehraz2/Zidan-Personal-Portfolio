@@ -398,12 +398,42 @@
 
         const prefersReducedMotion = isReducedMotion();
 
-        /* ====================================================
+          /* ====================================================
            04. REVEAL DIRECTIONS
         ==================================================== */
 
+        const revealTransform = (
+            direction,
+            distance = 45
+        ) => {
+            switch (direction) {
+                case "left":
+                    return `translate3d(-${distance}px, 0, 0)`;
 
+                case "right":
+                    return `translate3d(${distance}px, 0, 0)`;
 
+                case "down":
+                    return `translate3d(0, -${distance}px, 0)`;
+
+                case "zoom":
+                    return "scale(.93)";
+
+                case "pop":
+                    return "scale(.87)";
+
+                case "fade":
+                    return "translate3d(0, 0, 0)";
+
+                case "up":
+                default:
+                    return `translate3d(0, ${distance}px, 0)`;
+            }
+        };
+
+        /* ====================================================
+           05. SLOW SCROLL REVEAL ENGINE
+        ==================================================== */
 
 
 
