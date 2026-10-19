@@ -115,3 +115,59 @@
                 opacity: 1 !important;
                 transform: none !important;
             }
+
+
+              /* -----------------------------------------------
+               HERO ANIMATIONS
+            ----------------------------------------------- */
+
+            @keyframes zvHeroUp {
+                0% {
+                    opacity: 0;
+                    transform: translate3d(0, 48px, 0);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+
+            @keyframes zvHeroLeft {
+                0% {
+                    opacity: 0;
+                    transform: translate3d(-55px, 0, 0);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+
+            @keyframes zvHeroRight {
+                0% {
+                    opacity: 0;
+                    transform: translate3d(55px, 0, 0);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+
+            @keyframes zvHeroZoom {
+                0% {
+                    opacity: 0;
+                    transform: scale(.92);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
+
+            
