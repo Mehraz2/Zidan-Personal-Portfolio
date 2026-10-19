@@ -91,3 +91,27 @@
         style.id = "zv-premium-slow-styles";
 
         style.textContent = `
+
+           /* -----------------------------------------------
+               SLOW SCROLL REVEAL
+            ----------------------------------------------- */
+
+            [data-zv-reveal] {
+                opacity: 0;
+
+                transition:
+                    opacity var(--zv-duration, 1600ms)
+                    cubic-bezier(.16, 1, .3, 1),
+
+                    transform var(--zv-duration, 1600ms)
+                    cubic-bezier(.16, 1, .3, 1);
+
+                transition-delay: var(--zv-delay, 0ms);
+
+                backface-visibility: hidden;
+            }
+
+            [data-zv-reveal].zv-visible {
+                opacity: 1 !important;
+                transform: none !important;
+            }
