@@ -919,13 +919,79 @@
                 glow.remove();
             });
         }
-
-        /* ====================================================
+ /* ====================================================
            12. DESKTOP CARD TILT
         ==================================================== */
 
+        const tiltElements = uniqueElements([
+            ...selectAll(".business-card"),
+            ...selectAll(".testimonial-card"),
+            ...selectAll(".featured-business"),
+            ...selectAll(".hobby-box"),
+            ...selectAll(".personal-hobby")
+        ]);
+ 
+        const attachTilt = () => {
+            if (
+                !hasFinePointer() ||
+                isTablet() ||
+                prefersReducedMotion
+            ) {
+                return;
+            }
 
+            tiltElements.forEach((element) => {
+                if (element.dataset.zvTilt === "true") return;
 
+                element.dataset.zvTilt = "true";
+                element.classList.add("zv-hover-card");
+
+                const onMove = (event) => {
+                    const rect = element.getBoundingClientRect();
+
+                    if (!rect.width || !rect.height) return;
+
+                    const x = (event.clientX - rect.left) / rect.width;
+                    const y = (event.clientY - rect.top) / rect.height;
+
+                    const rotateY = (x - 0.5) * 4;
+                    const rotateX = (0.5 - y) * 4;
+
+                    element.style.transform =
+                        `perspective(1000px) ` +
+                        `rotateX(${rotateX.toFixed(2)}deg) ` +
+                        `rotateY(${rotateY.toFixed(2)}deg) ` +
+                        `translateY(-3px)`;
+                };
+
+                const onLeave = () => {
+                    element.style.transform = "";
+                };
+
+                element.addEventListener(
+                    "pointermove",
+                    onMove,
+                    { passive: true }
+                );
+
+                element.addEventListener(
+                    "pointerleave",
+                    onLeave,
+                    { passive: true }
+                );
+
+                addCleanup(() => {
+                    element.removeEventListener("pointermove", onMove);
+                    element.removeEventListener("pointerleave", onLeave);
+                });
+            });
+        };
+
+        attachTilt();
+
+        /* ====================================================
+           13. BUTTON MAGNETIC EFFECT
+        ==================================================== */
 
 
 
