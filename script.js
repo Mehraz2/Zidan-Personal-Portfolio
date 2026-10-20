@@ -866,11 +866,63 @@
             });
         }
 
-        /* ====================================================
+         /* ====================================================
            11. DESKTOP CURSOR GLOW
         ==================================================== */
 
+        if (hasFinePointer() && !prefersReducedMotion) {
+            const glow = document.createElement("div");
 
+            glow.className = "zv-cursor-glow";
+            glow.setAttribute("aria-hidden", "true");
+
+            body.appendChild(glow);
+
+            let mouseX = -200;
+            let mouseY = -200;
+
+            let glowX = -200;
+            let glowY = -200;
+
+            let glowFrame = 0;
+
+            const onMouseMove = (event) => {
+                mouseX = event.clientX;
+                mouseY = event.clientY;
+            };
+
+            const animateGlow = () => {
+                glowX += (mouseX - glowX) * 0.09;
+                glowY += (mouseY - glowY) * 0.09;
+
+                glow.style.transform =
+                    `translate3d(${glowX - 90}px, ${glowY - 90}px, 0)`;
+
+                glowFrame = requestAnimationFrame(animateGlow);
+            };
+
+            document.addEventListener(
+                "pointermove",
+                onMouseMove,
+                { passive: true }
+            );
+
+            glowFrame = requestAnimationFrame(animateGlow);
+
+            addCleanup(() => {
+                document.removeEventListener(
+                    "pointermove",
+                    onMouseMove
+                );
+
+                cancelAnimationFrame(glowFrame);
+                glow.remove();
+            });
+        }
+
+        /* ====================================================
+           12. DESKTOP CARD TILT
+        ==================================================== */
 
 
 
