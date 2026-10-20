@@ -1093,11 +1093,62 @@
             });
         });
 
-        /* ====================================================
+         /* ====================================================
            15. SMOOTH ANCHOR SCROLLING
         ==================================================== */
 
+        selectAll('a[href^="#"]').forEach((link) => {
+            const href = link.getAttribute("href");
 
+            if (!href || href === "#") return;
+
+            const onClick = (event) => {
+                let target;
+
+                try {
+                    target = document.querySelector(href);
+                } catch {
+                    return;
+                }
+
+                if (!target) return;
+
+                event.preventDefault();
+
+                const header = select(
+                    ".header, header, .navbar"
+                );
+
+                const headerHeight = header
+                    ? header.getBoundingClientRect().height
+                    : 0;
+
+                const targetTop =
+                    target.getBoundingClientRect().top +
+                    window.scrollY -
+                    headerHeight -
+                    15;
+
+                window.scrollTo({
+                    top: Math.max(0, targetTop),
+                    behavior: prefersReducedMotion ? "auto" : "smooth"
+                });
+
+                if (history.replaceState) {
+                    history.replaceState(null, "", href);
+                }
+            };
+
+            link.addEventListener("click", onClick);
+
+            addCleanup(() => {
+                link.removeEventListener("click", onClick);
+            });
+        });
+
+        /* ====================================================
+           16. MOBILE NAVIGATION
+        ==================================================== */
 
 
 
