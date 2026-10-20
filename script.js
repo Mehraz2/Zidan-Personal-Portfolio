@@ -993,12 +993,109 @@
            13. BUTTON MAGNETIC EFFECT
         ==================================================== */
 
+        if (
+            hasFinePointer() &&
+            !isTablet() &&
+            !prefersReducedMotion
+        ) {
+            const buttons = uniqueElements([
+                ...selectAll(".hero-buttons a"),
+                ...selectAll(".nav-cta"),
+                ...selectAll(".nav-cta a"),
+                ...selectAll(".contact-section button")
+            ]);
 
+            buttons.forEach((button) => {
+                const onMove = (event) => {
+                    const rect = button.getBoundingClientRect();
 
+                    const dx =
+                        event.clientX - (rect.left + rect.width / 2);
 
+                    const dy =
+                        event.clientY - (rect.top + rect.height / 2);
 
+                    button.style.transform =
+                        `translate3d(${dx * 0.055}px, ${dy * 0.055}px, 0)`;
+                };
 
+                const onLeave = () => {
+                    button.style.transform = "";
+                };
 
+                button.addEventListener(
+                    "pointermove",
+                    onMove,
+                    { passive: true }
+                );
+
+                button.addEventListener(
+                    "pointerleave",
+                    onLeave,
+                    { passive: true }
+                );
+
+                addCleanup(() => {
+                    button.removeEventListener("pointermove", onMove);
+                    button.removeEventListener("pointerleave", onLeave);
+                });
+            });
+        }
+
+      /* ====================================================
+           14. MOBILE TOUCH FEEDBACK
+        ==================================================== */
+
+        const touchElements = uniqueElements([
+            ...selectAll(".business-card"),
+            ...selectAll(".testimonial-card"),
+            ...selectAll(".hobby-box"),
+            ...selectAll(".personal-hobby"),
+            ...selectAll(".hero-buttons a"),
+            ...selectAll(".nav-cta a"),
+            ...selectAll(".business-link"),
+            ...selectAll(".contact-section button")
+        ]);
+
+        touchElements.forEach((element) => {
+            const onTouchStart = () => {
+                if (isMobile() && !prefersReducedMotion) {
+                    element.classList.add("zv-touch-active");
+                }
+            };
+
+            const onTouchEnd = () => {
+                element.classList.remove("zv-touch-active");
+            };
+
+            element.addEventListener(
+                "touchstart",
+                onTouchStart,
+                { passive: true }
+            );
+
+            element.addEventListener(
+                "touchend",
+                onTouchEnd,
+                { passive: true }
+            );
+
+            element.addEventListener(
+                "touchcancel",
+                onTouchEnd,
+                { passive: true }
+            );
+
+            addCleanup(() => {
+                element.removeEventListener("touchstart", onTouchStart);
+                element.removeEventListener("touchend", onTouchEnd);
+                element.removeEventListener("touchcancel", onTouchEnd);
+            });
+        });
+
+        /* ====================================================
+           15. SMOOTH ANCHOR SCROLLING
+        ==================================================== */
 
 
 
