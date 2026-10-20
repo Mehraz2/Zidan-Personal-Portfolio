@@ -770,11 +770,105 @@
 
         runHeroAnimation();
 
-        /* ====================================================
+       /* ====================================================
            10. HERO PARALLAX — DESKTOP
         ==================================================== */
 
+        const heroSection = select(".hero-section");
 
+        if (
+            heroImage &&
+            heroSection &&
+            hasFinePointer() &&
+            !prefersReducedMotion
+        ) {
+            let targetX = 0;
+            let targetY = 0;
+
+            let currentX = 0;
+            let currentY = 0;
+
+            let frame = 0;
+
+            const animateParallax = () => {
+                currentX += (targetX - currentX) * 0.055;
+                currentY += (targetY - currentY) * 0.055;
+
+                heroImage.style.setProperty(
+                    "--zv-parallax-x",
+                    `${currentX.toFixed(2)}px`
+                );
+
+                heroImage.style.setProperty(
+                    "--zv-parallax-y",
+                    `${currentY.toFixed(2)}px`
+                );
+
+                if (
+                    Math.abs(targetX - currentX) > 0.1 ||
+                    Math.abs(targetY - currentY) > 0.1
+                ) {
+                    frame = requestAnimationFrame(animateParallax);
+                } else {
+                    frame = 0;
+                }
+            };
+
+            const onPointerMove = (event) => {
+                const rect = heroSection.getBoundingClientRect();
+
+                if (!rect.width || !rect.height) return;
+
+                targetX =
+                    ((event.clientX - rect.left) / rect.width - 0.5) * 10;
+
+                targetY =
+                    ((event.clientY - rect.top) / rect.height - 0.5) * 10;
+
+                if (!frame) {
+                    frame = requestAnimationFrame(animateParallax);
+                }
+            };
+
+            const onPointerLeave = () => {
+                targetX = 0;
+                targetY = 0;
+
+                if (!frame) {
+                    frame = requestAnimationFrame(animateParallax);
+                }
+            };
+
+            heroSection.addEventListener(
+                "pointermove",
+                onPointerMove,
+                { passive: true }
+            );
+
+            heroSection.addEventListener(
+                "pointerleave",
+                onPointerLeave,
+                { passive: true }
+            );
+
+            addCleanup(() => {
+                heroSection.removeEventListener(
+                    "pointermove",
+                    onPointerMove
+                );
+
+                heroSection.removeEventListener(
+                    "pointerleave",
+                    onPointerLeave
+                );
+
+                cancelAnimationFrame(frame);
+            });
+        }
+
+        /* ====================================================
+           11. DESKTOP CURSOR GLOW
+        ==================================================== */
 
 
 
