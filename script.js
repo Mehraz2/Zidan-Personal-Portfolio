@@ -666,9 +666,40 @@
            07. APPLY ALL REVEAL GROUPS
         ==================================================== */
 
+        revealGroups.forEach((group) => {
+            const elements = uniqueElements(
+                group.selectors.flatMap((selector) => {
+                    return selectAll(selector);
+                })
+            );
 
+            elements.forEach((element, index) => {
+                const staggerDelay = group.stagger
+                    ? (index % 6) * group.stagger
+                    : 0;
 
+                /*
+                 * Mobile is also slow, but with a little less
+                 * delay so the page remains comfortable to use.
+                 */
+                const mobileDelay = isMobile()
+                    ? Math.round(staggerDelay * 0.7)
+                    : staggerDelay;
 
+                registerReveal(element, {
+                    direction: group.direction,
+                    distance: group.distance,
+                    duration: isMobile()
+                        ? Math.max(1300, group.duration - 150)
+                        : group.duration,
+                    delay: (group.delay || 0) + mobileDelay
+                });
+            });
+        });
+
+        /* ====================================================
+           08. GENERAL SECTION REVEALS
+        ==================================================== */
 
 
 
