@@ -435,6 +435,410 @@
            05. SLOW SCROLL REVEAL ENGINE
         ==================================================== */
 
+        if ("IntersectionObserver" in window) {
+            revealObserver = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (!entry.isIntersecting) return;
+
+                        const element = entry.target;
+
+                        element.classList.add("zv-visible");
+
+                        revealObserver.unobserve(element);
+                    });
+                },
+                {
+                    threshold: 0.08,
+
+                    /*
+                     * Start reveal a little later.
+                     * A more negative bottom margin means
+                     * the element enters the reveal zone later.
+                     */
+                    rootMargin: "0px 0px -90px 0px"
+                }
+            );
+        }
+
+        const registerReveal = (
+            element,
+            {
+                direction = "up",
+                distance = 45,
+                duration = 2500,
+                delay = 300
+            } = {}
+        ) => {
+            if (!element || observedRevealElements.has(element)) {
+                return;
+            }
+
+            observedRevealElements.add(element);
+
+            if (prefersReducedMotion || !revealObserver) {
+                element.classList.add("zv-visible");
+                return;
+            }
+
+            element.dataset.zvReveal = "true";
+
+            element.style.setProperty(
+                "--zv-duration",
+                `${duration}ms`
+            );
+
+            element.style.setProperty(
+                "--zv-delay",
+                `${delay}ms`
+            );
+
+            const actualDistance = isMobile()
+                ? Math.min(distance, 30)
+                : distance;
+
+            element.style.transform = revealTransform(
+                direction,
+                actualDistance
+            );
+
+            revealObserver.observe(element);
+        };
+
+  /* ====================================================
+           06. REVEAL GROUPS — SLOW PREMIUM TIMING
+        ==================================================== */
+
+        const revealGroups = [
+            {
+                selectors: [
+                    ".about-section .about-main",
+                    ".about-section .about-content",
+                    ".about-section .about-text",
+                    ".about-section .about-description",
+                    ".personal-section .personal-text",
+                    ".personal-section .personal-content"
+                ],
+                direction: "left",
+                distance: 58,
+                duration: 1750,
+                delay: 100
+            },
+
+            {
+                selectors: [
+                    ".about-section .about-highlights",
+                    ".about-highlights",
+                    ".about-highlights .highlight-item",
+                    ".about-section .highlights"
+                ],
+                direction: "right",
+                distance: 58,
+                duration: 1750,
+                delay: 180
+            },
+
+            {
+                selectors: [
+                    ".about-section .info-item",
+                    ".about-section .hobby-box",
+                    ".about-section .hobby",
+                    ".hobby-box .hobby",
+                    ".personal-section .personal-hobby",
+                    ".personal-section .hobby",
+                    ".about-section .highlight-item"
+                ],
+                direction: "pop",
+                distance: 28,
+                duration: 1450,
+                stagger: 180
+            },
+
+            {
+                selectors: [
+                    ".business-section .business-heading",
+                    ".business-section .section-heading",
+                    ".business-section .business-grid",
+                    ".business-grid .business-card",
+                    ".business-section .business-card",
+                    ".business-card"
+                ],
+                direction: "up",
+                distance: 48,
+                duration: 1650,
+                stagger: 240
+            },
+
+            {
+                selectors: [
+                    ".journey-section .journey-heading",
+                    ".journey-section .section-heading",
+                    ".journey-section .journey-grid",
+                    ".journey-grid .journey-item",
+                    ".journey-section .journey-item",
+                    ".journey-item"
+                ],
+                direction: "up",
+                distance: 42,
+                duration: 1550,
+                stagger: 220
+            },
+
+            {
+                selectors: [
+                    ".featured-section .featured-image",
+                    ".featured-business .featured-image",
+                    ".featured-business img",
+                    ".featured-image"
+                ],
+                direction: "left",
+                distance: 62,
+                duration: 1950,
+                delay: 120
+            },
+
+            {
+                selectors: [
+                    ".featured-section .featured-content",
+                    ".featured-business .featured-content",
+                    ".featured-content"
+                ],
+                direction: "right",
+                distance: 62,
+                duration: 1950,
+                delay: 220
+            },
+
+            {
+                selectors: [
+                    ".personal-section .personal-image",
+                    ".personal-image"
+                ],
+                direction: "right",
+                distance: 45,
+                duration: 1700,
+                delay: 120
+            },
+
+            {
+                selectors: [
+                    ".testimonial-section .testimonial-heading",
+                    ".testimonial-section .section-heading",
+                    ".testimonial-section .testimonial-grid",
+                    ".testimonial-grid .testimonial-card",
+                    ".testimonial-section .testimonial-card",
+                    ".testimonial-card"
+                ],
+                direction: "up",
+                distance: 38,
+                duration: 1550,
+                stagger: 220
+            },
+
+            {
+                selectors: [
+                    ".contact-section .contact-content",
+                    ".contact-section .contact-form",
+                    ".contact-section .contact-info",
+                    ".contact-section .contact-item",
+                    ".contact-section .contact-heading"
+                ],
+                direction: "up",
+                distance: 40,
+                duration: 1550,
+                stagger: 180
+            },
+
+            {
+                selectors: [
+                    ".footer .footer-brand",
+                    ".footer .footer-column",
+                    ".footer .footer-bottom"
+                ],
+                direction: "up",
+                distance: 30,
+                duration: 1400,
+                stagger: 160
+            }
+        ];
+
+        /* ====================================================
+           07. APPLY ALL REVEAL GROUPS
+        ==================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
