@@ -723,10 +723,56 @@
             });
         });
 
-        /* ====================================================
+     /* ====================================================
            09. HERO ENTRANCE — SLOW CINEMATIC
         ==================================================== */
 
+        const heroContent = select(".hero-content");
+        const heroTagline = select(".hero-tagline");
+        const heroTitle = select(".hero-title");
+        const heroSubtitle = select(".hero-subtitle");
+        const heroDescription = select(".hero-description");
+        const heroButtons = select(".hero-buttons");
+
+        const heroImage = select(
+            ".hero-image-wrapper, .hero-image"
+        );
+
+        const heroElements = [
+            { element: heroTagline, delay: 200 },
+            { element: heroTitle, delay: 420 },
+            { element: heroSubtitle, delay: 650 },
+            { element: heroDescription, delay: 850 },
+            { element: heroButtons, delay: 1050 }
+        ];
+
+        const runHeroAnimation = () => {
+            if (prefersReducedMotion) return;
+
+            heroElements.forEach(({ element, delay }) => {
+                if (!element) return;
+
+                element.style.animation =
+                    `zvHeroUp 1650ms cubic-bezier(.16,1,.3,1) ` +
+                    `${delay}ms both`;
+            });
+
+            if (heroImage) {
+                heroImage.style.animation =
+                    "zvHeroZoom 2100ms cubic-bezier(.16,1,.3,1) 500ms both";
+            }
+
+            if (heroContent && !heroTagline && !heroTitle) {
+                heroContent.style.animation =
+                    "zvHeroUp 1650ms cubic-bezier(.16,1,.3,1) both";
+            }
+        };
+
+        runHeroAnimation();
+
+        /* ====================================================
+           10. HERO PARALLAX — DESKTOP
+        ==================================================== */
 
 
 
