@@ -697,12 +697,35 @@
             });
         });
 
-        /* ====================================================
+     /* ====================================================
            08. GENERAL SECTION REVEALS
         ==================================================== */
 
+        const generalSelectors = [
+            ".section-label",
+            ".section-heading",
+            ".section-title",
+            ".section-description"
+        ];
 
+        const generalElements = uniqueElements(
+            generalSelectors.flatMap((selector) => {
+                return selectAll(selector);
+            })
+        );
 
+        generalElements.forEach((element, index) => {
+            registerReveal(element, {
+                direction: "up",
+                distance: 32,
+                duration: 1550,
+                delay: (index % 3) * 140
+            });
+        });
+
+        /* ====================================================
+           09. HERO ENTRANCE — SLOW CINEMATIC
+        ==================================================== */
 
 
 
