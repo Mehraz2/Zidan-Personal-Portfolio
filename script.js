@@ -1146,20 +1146,87 @@
             });
         });
 
-        /* ====================================================
+       /* ====================================================
            16. MOBILE NAVIGATION
         ==================================================== */
 
+        const menuToggle = select(
+            ".menu-toggle, .nav-toggle, .hamburger, .menu-btn"
+        );
 
+        const navContainer = select(
+            ".navLinks, .nav-links, .navbar-links, .nav-menu"
+        );
 
+        if (menuToggle && navContainer) {
+            if (!navContainer.id) {
+                navContainer.id = "zv-mobile-navigation";
+            }
 
+            menuToggle.setAttribute(
+                "aria-controls",
+                navContainer.id
+            );
 
+            const closeMenu = () => {
+                navContainer.classList.remove(
+                    "active",
+                    "open",
+                    "show",
+                    "nav-open"
+                );
 
+                menuToggle.classList.remove("active", "open");
 
+                menuToggle.setAttribute("aria-expanded", "false");
+            };
 
+            const toggleMenu = () => {
+                const isOpen =
+                    navContainer.classList.contains("active") ||
+                    navContainer.classList.contains("open") ||
+                    navContainer.classList.contains("show") ||
+                    navContainer.classList.contains("nav-open");
 
+                closeMenu();
 
+                if (!isOpen) {
+                    navContainer.classList.add("active");
+                    menuToggle.classList.add("active");
 
+                    menuToggle.setAttribute("aria-expanded", "true");
+                }
+            };
+
+            menuToggle.addEventListener("click", toggleMenu);
+
+            const onNavClick = (event) => {
+                if (event.target.closest("a")) {
+                    closeMenu();
+                }
+            };
+
+            const onKeyDown = (event) => {
+                if (event.key === "Escape") {
+                    closeMenu();
+                }
+            };
+
+            navContainer.addEventListener("click", onNavClick);
+            document.addEventListener("keydown", onKeyDown);
+
+            addCleanup(() => {
+                menuToggle.removeEventListener("click", toggleMenu);
+                navContainer.removeEventListener("click", onNavClick);
+                document.removeEventListener("keydown", onKeyDown);
+            });
+        }
+
+        /* ====================================================
+           17. ACTIVE NAVIGATION LINK
+        ==================================================== */
+
+        
 
 
 
