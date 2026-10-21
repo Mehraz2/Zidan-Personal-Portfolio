@@ -1412,15 +1412,88 @@
             });
         });
 
-        /* ====================================================
+   /* ====================================================
            23. OPTIONAL NUMBER COUNTERS
 
            Example:
            <span data-zv-count="100">0</span>
         ==================================================== */
 
+        const counterElements = selectAll("[data-zv-count]");
 
+        const animateCounter = (element) => {
+            if (element.dataset.zvCounterDone === "true") {
+                return;
+            }
 
+            const target = Number(element.dataset.zvCount);
+
+            if (!Number.isFinite(target)) return;
+
+            element.dataset.zvCounterDone = "true";
+
+            if (prefersReducedMotion) {
+                element.textContent = String(target);
+                return;
+            }
+
+            const duration = isMobile() ? 1500 : 1900;
+            const startTime = performance.now();
+
+            const originalText = element.textContent.trim();
+
+            const prefix = originalText.match(/^[^\d-]*/)?.[0] || "";
+            const suffix = originalText.match(/[^\d]*$/)?.[0] || "";
+
+            const update = (now) => {
+                const progress = clamp(
+                    (now - startTime) / duration,
+                    0,
+                    1
+                );
+
+                const eased = 1 - Math.pow(1 - progress, 4);
+
+                const value = Math.round(target * eased);
+
+                element.textContent = `${prefix}${value}${suffix}`;
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    element.textContent = `${prefix}${target}${suffix}`;
+                }
+            };
+
+            requestAnimationFrame(update);
+        };
+
+        if ("IntersectionObserver" in window) {
+            counterObserver = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (!entry.isIntersecting) return;
+
+                        animateCounter(entry.target);
+
+                        counterObserver.unobserve(entry.target);
+                    });
+                },
+                {
+                    threshold: 0.5
+                }
+            );
+
+            counterElements.forEach((element) => {
+                counterObserver.observe(element);
+            });
+        } else {
+            counterElements.forEach(animateCounter);
+        }
+
+        /* ====================================================
+           24. CUSTOM REVEAL ATTRIBUTES
+        ==================================================== */
 
 
 
