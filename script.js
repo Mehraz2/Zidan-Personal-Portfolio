@@ -1328,11 +1328,56 @@
             backToTop.removeEventListener("click", onBackToTop);
         });
 
-        /* ====================================================
+         /* ====================================================
            20. SCROLL HANDLER
         ==================================================== */
 
+        const updateScrollUI = () => {
+            const scrollTop = window.scrollY || html.scrollTop || 0;
 
+            const maxScroll =
+                html.scrollHeight - window.innerHeight;
+
+            const progress = maxScroll > 0
+                ? clamp((scrollTop / maxScroll) * 100, 0, 100)
+                : 0;
+
+            progressBar.style.width = `${progress}%`;
+
+            backToTop.classList.toggle(
+                "zv-back-visible",
+                scrollTop > 450
+            );
+
+            scrollTicking = false;
+        };
+
+        const onScroll = () => {
+            if (scrollTicking) return;
+
+            scrollTicking = true;
+
+            requestAnimationFrame(updateScrollUI);
+        };
+
+        window.addEventListener("scroll", onScroll, {
+            passive: true
+        });
+
+        window.addEventListener("resize", onScroll, {
+            passive: true
+        });
+
+        updateScrollUI();
+
+        addCleanup(() => {
+            window.removeEventListener("scroll", onScroll);
+            window.removeEventListener("resize", onScroll);
+        });
+
+        /* ====================================================
+           21. JOURNEY DOTS
+        ==================================================== */
 
 
 
