@@ -1222,13 +1222,68 @@
             });
         }
 
-        /* ====================================================
+  /* ====================================================
            17. ACTIVE NAVIGATION LINK
         ==================================================== */
 
-        
+        const navigationLinks = selectAll(
+            '.navLinks a[href^="#"], ' +
+            '.nav-links a[href^="#"], ' +
+            '.navbar-links a[href^="#"], ' +
+            'nav a[href^="#"]'
+        );
 
+        const navigationSections = uniqueElements(
+            navigationLinks.map((link) => {
+                const href = link.getAttribute("href");
 
+                try {
+                    return href ? document.querySelector(href) : null;
+                } catch {
+                    return null;
+                }
+            })
+        );
+
+        if ("IntersectionObserver" in window) {
+            sectionObserver = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (!entry.isIntersecting) return;
+
+                        const id = entry.target.id;
+
+                        navigationLinks.forEach((link) => {
+                            const active =
+                                link.getAttribute("href") === `#${id}`;
+
+                            link.classList.toggle("active", active);
+
+                            if (active) {
+                                link.setAttribute(
+                                    "aria-current",
+                                    "location"
+                                );
+                            } else {
+                                link.removeAttribute("aria-current");
+                            }
+                        });
+                    });
+                },
+                {
+                    rootMargin: "-25% 0px -60% 0px",
+                    threshold: 0
+                }
+            );
+
+            navigationSections.forEach((section) => {
+                sectionObserver.observe(section);
+            });
+        }
+
+        /* ====================================================
+           18. SCROLL PROGRESS BAR
+        ==================================================== */
 
 
 
