@@ -1280,16 +1280,25 @@
                 sectionObserver.observe(section);
             });
         }
-
-        /* ====================================================
+   /* ====================================================
            18. SCROLL PROGRESS BAR
         ==================================================== */
 
+        let progressBar = select(".zv-scroll-progress");
 
+        if (!progressBar) {
+            progressBar = document.createElement("div");
 
+            progressBar.className = "zv-scroll-progress";
 
+            progressBar.setAttribute("aria-hidden", "true");
 
+            body.appendChild(progressBar);
+        }
 
+        /* ====================================================
+           19. BACK TO TOP
+        ==================================================== */
 
 
 
