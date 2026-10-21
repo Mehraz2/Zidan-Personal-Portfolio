@@ -1375,11 +1375,25 @@
             window.removeEventListener("resize", onScroll);
         });
 
-        /* ====================================================
+       /* ====================================================
            21. JOURNEY DOTS
         ==================================================== */
 
+        const journeyDots = uniqueElements([
+            ...selectAll(".journey-dot"),
+            ...selectAll(".journey-item .dot")
+        ]);
 
+        journeyDots.forEach((dot) => {
+            if (prefersReducedMotion) return;
+
+            dot.style.animation =
+                "zvGoldPulse 3.5s ease-in-out infinite";
+        });
+
+        /* ====================================================
+           22. IMAGE LOADING
+        ==================================================== */
 
 
 
