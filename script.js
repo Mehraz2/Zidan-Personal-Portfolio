@@ -1491,16 +1491,37 @@
             counterElements.forEach(animateCounter);
         }
 
-        /* ====================================================
+  /* ====================================================
            24. CUSTOM REVEAL ATTRIBUTES
         ==================================================== */
 
+        selectAll("[data-zv-animation]").forEach((element) => {
+            registerReveal(element, {
+                direction: element.dataset.zvAnimation || "up",
 
+                distance: clamp(
+                    Number(element.dataset.zvDistance || 45),
+                    0,
+                    100
+                ),
 
+                duration: clamp(
+                    Number(element.dataset.zvDuration || 1600),
+                    100,
+                    4000
+                ),
 
+                delay: clamp(
+                    Number(element.dataset.zvDelay || 0),
+                    0,
+                    3000
+                )
+            });
+        });
 
-
-
+        /* ====================================================
+           25. CUSTOM STAGGER GROUPS
+        ==================================================== */
 
 
 
