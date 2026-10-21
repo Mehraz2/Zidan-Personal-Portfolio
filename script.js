@@ -1,11 +1,48 @@
+/* ============================================================
+   ZIDANVERSE — COMPLETE PREMIUM PORTFOLIO JAVASCRIPT
+   VERSION 2.0 — SLOW & SMOOTH EDITION
 
+   01. Initialization
+   02. Animation styles
+   03. Global helpers
+   04. Reveal directions
+   05. Slow scroll reveal engine
+   06. About & highlights
+   07. Hobby stagger
+   08. Business cards stagger
+   09. Journey reveal
+   10. Featured business reveal
+   11. Testimonials
+   12. Contact & footer
+   13. Hero entrance
+   14. Hero parallax
+   15. Desktop cursor glow
+   16. Desktop 3D tilt
+   17. Button interaction
+   18. Mobile touch feedback
+   19. Smooth navigation
+   20. Mobile menu
+   21. Active navigation
+   22. Scroll progress
+   23. Back to top
+   24. Journey dots
+   25. Image loading
+   26. Number counters
+   27. Custom reveal support
+   28. Custom stagger support
+   29. Floating elements
+   30. Contact form focus
+   31. External link safety
+   32. Reduced motion support
+   33. Responsive handling
+   34. Cleanup
+   35. DOM initialization
+============================================================ */
 
 (() => {
-    "use strict"
+    "use strict";
 
-
-
-      /* ========================================================
+    /* ========================================================
        01. INITIALIZATION
     ======================================================== */
 
@@ -379,11 +416,7 @@
 
         document.head.appendChild(style);
 
-    }
-
-
-
- /* ====================================================
+        /* ====================================================
            03. GLOBAL VARIABLES
         ==================================================== */
 
@@ -398,7 +431,7 @@
 
         const prefersReducedMotion = isReducedMotion();
 
-          /* ====================================================
+        /* ====================================================
            04. REVEAL DIRECTIONS
         ==================================================== */
 
@@ -466,8 +499,8 @@
             {
                 direction = "up",
                 distance = 45,
-                duration = 2500,
-                delay = 300
+                duration = 1600,
+                delay = 0
             } = {}
         ) => {
             if (!element || observedRevealElements.has(element)) {
@@ -505,7 +538,7 @@
             revealObserver.observe(element);
         };
 
-  /* ====================================================
+        /* ====================================================
            06. REVEAL GROUPS — SLOW PREMIUM TIMING
         ==================================================== */
 
@@ -697,7 +730,7 @@
             });
         });
 
-     /* ====================================================
+        /* ====================================================
            08. GENERAL SECTION REVEALS
         ==================================================== */
 
@@ -723,7 +756,7 @@
             });
         });
 
-     /* ====================================================
+        /* ====================================================
            09. HERO ENTRANCE — SLOW CINEMATIC
         ==================================================== */
 
@@ -770,7 +803,7 @@
 
         runHeroAnimation();
 
-       /* ====================================================
+        /* ====================================================
            10. HERO PARALLAX — DESKTOP
         ==================================================== */
 
@@ -866,7 +899,7 @@
             });
         }
 
-         /* ====================================================
+        /* ====================================================
            11. DESKTOP CURSOR GLOW
         ==================================================== */
 
@@ -919,7 +952,8 @@
                 glow.remove();
             });
         }
- /* ====================================================
+
+        /* ====================================================
            12. DESKTOP CARD TILT
         ==================================================== */
 
@@ -1042,7 +1076,7 @@
             });
         }
 
-      /* ====================================================
+        /* ====================================================
            14. MOBILE TOUCH FEEDBACK
         ==================================================== */
 
@@ -1093,7 +1127,7 @@
             });
         });
 
-         /* ====================================================
+        /* ====================================================
            15. SMOOTH ANCHOR SCROLLING
         ==================================================== */
 
@@ -1146,7 +1180,7 @@
             });
         });
 
-       /* ====================================================
+        /* ====================================================
            16. MOBILE NAVIGATION
         ==================================================== */
 
@@ -1222,7 +1256,7 @@
             });
         }
 
-  /* ====================================================
+        /* ====================================================
            17. ACTIVE NAVIGATION LINK
         ==================================================== */
 
@@ -1280,7 +1314,8 @@
                 sectionObserver.observe(section);
             });
         }
-   /* ====================================================
+
+        /* ====================================================
            18. SCROLL PROGRESS BAR
         ==================================================== */
 
@@ -1296,7 +1331,7 @@
             body.appendChild(progressBar);
         }
 
-     /* ====================================================
+        /* ====================================================
            19. BACK TO TOP
         ==================================================== */
 
@@ -1328,7 +1363,7 @@
             backToTop.removeEventListener("click", onBackToTop);
         });
 
-         /* ====================================================
+        /* ====================================================
            20. SCROLL HANDLER
         ==================================================== */
 
@@ -1375,7 +1410,7 @@
             window.removeEventListener("resize", onScroll);
         });
 
-       /* ====================================================
+        /* ====================================================
            21. JOURNEY DOTS
         ==================================================== */
 
@@ -1390,6 +1425,7 @@
             dot.style.animation =
                 "zvGoldPulse 3.5s ease-in-out infinite";
         });
+
         /* ====================================================
            22. IMAGE LOADING
         ==================================================== */
@@ -1412,7 +1448,7 @@
             });
         });
 
-   /* ====================================================
+        /* ====================================================
            23. OPTIONAL NUMBER COUNTERS
 
            Example:
@@ -1491,7 +1527,7 @@
             counterElements.forEach(animateCounter);
         }
 
-  /* ====================================================
+        /* ====================================================
            24. CUSTOM REVEAL ATTRIBUTES
         ==================================================== */
 
@@ -1523,153 +1559,682 @@
            25. CUSTOM STAGGER GROUPS
         ==================================================== */
 
+        selectAll("[data-zv-stagger]").forEach((container) => {
+            const delayStep = clamp(
+                Number(container.dataset.zvStagger) || 180,
+                0,
+                500
+            );
+
+            Array.from(container.children).forEach((child, index) => {
+                registerReveal(child, {
+                    direction: "up",
+                    distance: 35,
+                    duration: 1550,
+                    delay: index * delayStep
+                });
+            });
+        });
+
+        /* ====================================================
+           26. OPTIONAL FLOATING ELEMENTS
+        ==================================================== */
+
+        selectAll("[data-zv-float]").forEach((element, index) => {
+            if (prefersReducedMotion || isMobile()) return;
+
+            const duration = 5 + (index % 3);
+
+            element.style.animation =
+                `zvFloat ${duration}s ease-in-out infinite`;
+
+            element.style.animationDelay =
+                `${(index % 4) * 0.35}s`;
+        });
+
+        /* ====================================================
+           27. CONTACT FORM FOCUS
+        ==================================================== */
+
+        selectAll(".contact-form, .contact-section form").forEach(
+            (form) => {
+                selectAll("input, textarea, select", form).forEach(
+                    (input) => {
+                        const onFocus = () => {
+                            input.dataset.zvFocused = "true";
+                        };
+
+                        const onBlur = () => {
+                            delete input.dataset.zvFocused;
+                        };
+
+                        input.addEventListener("focus", onFocus);
+                        input.addEventListener("blur", onBlur);
+
+                        addCleanup(() => {
+                            input.removeEventListener("focus", onFocus);
+                            input.removeEventListener("blur", onBlur);
+                        });
+                    }
+                );
+            }
+        );
+
+        /* ====================================================
+           28. EXTERNAL LINK SAFETY
+        ==================================================== */
+
+        selectAll('a[target="_blank"]').forEach((link) => {
+            const rel = new Set(
+                (link.getAttribute("rel") || "")
+                    .split(/\s+/)
+                    .filter(Boolean)
+            );
+
+            rel.add("noopener");
+            rel.add("noreferrer");
+
+            link.setAttribute("rel", [...rel].join(" "));
+        });
+
+        /* ====================================================
+           29. REDUCED MOTION SUPPORT
+        ==================================================== */
+
+        const onMotionChange = () => {
+            if (!isReducedMotion()) return;
+
+            selectAll("[data-zv-reveal]").forEach((element) => {
+                element.classList.add("zv-visible");
+                element.style.opacity = "1";
+                element.style.transform = "none";
+            });
+
+            if (revealObserver) {
+                revealObserver.disconnect();
+            }
+        };
+
+        if (reducedMotion.addEventListener) {
+            reducedMotion.addEventListener("change", onMotionChange);
+        } else if (reducedMotion.addListener) {
+            reducedMotion.addListener(onMotionChange);
+        }
+
+        addCleanup(() => {
+            if (reducedMotion.removeEventListener) {
+                reducedMotion.removeEventListener(
+                    "change",
+                    onMotionChange
+                );
+            } else if (reducedMotion.removeListener) {
+                reducedMotion.removeListener(onMotionChange);
+            }
+        });
+
+        /* ====================================================
+           30. RESPONSIVE HANDLING
+        ==================================================== */
+
+        const onResize = () => {
+            if (isTablet()) {
+                tiltElements.forEach((element) => {
+                    element.style.transform = "";
+                });
+            }
+
+            updateScrollUI();
+        };
+
+        window.addEventListener("resize", onResize, {
+            passive: true
+        });
+
+        addCleanup(() => {
+            window.removeEventListener("resize", onResize);
+        });
+
+        /* ====================================================
+           31. OBSERVER FALLBACK
+        ==================================================== */
+
+        if (!("IntersectionObserver" in window)) {
+            selectAll("[data-zv-reveal]").forEach((element) => {
+                element.classList.add("zv-visible");
+                element.style.opacity = "1";
+                element.style.transform = "none";
+            });
+        }
+
+        /* ====================================================
+           32. PAGE READY
+        ==================================================== */
+
+        body.classList.add("zv-js-loaded");
+        html.classList.add("zv-js-loaded");
+
+        /* ====================================================
+           33. CLEANUP
+        ==================================================== */
+
+        window.zidanVerseCleanup = () => {
+            cleanupFunctions.forEach((cleanup) => {
+                try {
+                    cleanup();
+                } catch {
+                    // Keep cleanup errors from breaking the page.
+                }
+            });
+
+            if (revealObserver) revealObserver.disconnect();
+            if (counterObserver) counterObserver.disconnect();
+            if (sectionObserver) sectionObserver.disconnect();
+
+            cancelAnimationFrame(cursorFrame);
+
+            style.remove();
+
+            delete body.dataset.zvInitialized;
+        };
+    };
+
+    /* ========================================================
+       34. WAIT FOR DOM
+    ======================================================== */
 
+    if (document.readyState === "loading") {
+        document.addEventListener(
+            "DOMContentLoaded",
+            startZidanVerse,
+            { once: true }
+        );
+    } else {
+        startZidanVerse();
+    }
 
+})();
 
 
 
+/* =========================================================
+   69. ZIDANVERSE — GALAXY UNIVERSE ENGINE
+   Stars • Nebula • Shooting Stars • Comets • Parallax
+========================================================= */
 
+(() => {
+    "use strict";
 
+    // Prevent duplicate galaxy engines
+    if (document.getElementById("zv-galaxy-canvas")) return;
 
+    const canvas = document.createElement("canvas");
+    canvas.id = "zv-galaxy-canvas";
+    canvas.setAttribute("aria-hidden", "true");
 
+    document.body.prepend(canvas);
 
+    const ctx = canvas.getContext("2d", { alpha: true });
 
+    if (!ctx) {
+        canvas.remove();
+        return;
+    }
 
+    const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    );
 
+    const mobileQuery = window.matchMedia("(max-width: 768px)");
 
+    let width = 0;
+    let height = 0;
+    let dpr = 1;
 
+    let stars = [];
+    let comets = [];
+    let shootingStars = [];
 
+    let targetScroll = window.scrollY;
+    let smoothScroll = window.scrollY;
 
+    let frameId = null;
+    let lastFrame = 0;
+    let elapsed = 0;
 
+    // -----------------------------------------
+    // CONFIGURATION
+    // -----------------------------------------
 
+    const CONFIG = {
+        desktopStars: 190,
+        mobileStars: 85,
 
+        // Scroll movement: lower = slower
+        scrollEase: 0.055,
+        parallaxStrength: 0.24,
 
+        // Comets appear occasionally
+        cometIntervalMin: 4500,
+        cometIntervalMax: 10000,
 
+        shootingStarIntervalMin: 2500,
+        shootingStarIntervalMax: 6000
+    };
 
+    let nextComet = 0;
+    let nextShootingStar = 0;
 
+    function random(min, max) {
+        return Math.random() * (max - min) + min;
+    }
 
+    // -----------------------------------------
+    // CANVAS SIZE
+    // -----------------------------------------
 
+    function resizeCanvas() {
+        width = window.innerWidth;
+        height = window.innerHeight;
 
+        dpr = Math.min(window.devicePixelRatio || 1, 1.5);
 
+        canvas.width = Math.floor(width * dpr);
+        canvas.height = Math.floor(height * dpr);
 
+        canvas.style.width = `${width}px`;
+        canvas.style.height = `${height}px`;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        })();
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        createStars();
+
+        // Keep existing animation positions sensible
+        comets = comets.filter(
+            comet => comet.x < width + 300 && comet.y < height + 300
+        );
+
+        render(performance.now(), 0);
+    }
+
+    // -----------------------------------------
+    // STAR FIELD
+    // -----------------------------------------
+
+    function createStars() {
+        const count = mobileQuery.matches
+            ? CONFIG.mobileStars
+            : CONFIG.desktopStars;
+
+        stars = [];
+
+        for (let i = 0; i < count; i++) {
+            stars.push({
+                x: random(0, width),
+                y: random(0, height),
+
+                radius: random(0.35, 1.45),
+                opacity: random(0.22, 0.88),
+
+                phase: random(0, Math.PI * 2),
+                twinkleSpeed: random(0.0005, 0.0018),
+
+                // Depth gives stars different scroll speeds
+                depth: random(0.12, 0.85),
+
+                tint: Math.random()
+            });
+        }
+    }
+
+    function drawStars(time) {
+        stars.forEach(star => {
+            const twinkle =
+                Math.sin(time * star.twinkleSpeed + star.phase) * 0.28;
+
+            const alpha = Math.max(
+                0.12,
+                Math.min(1, star.opacity + twinkle)
+            );
+
+            const parallaxY =
+                smoothScroll * star.depth * CONFIG.parallaxStrength;
+
+            const parallaxX =
+                Math.sin(smoothScroll * 0.0003 + star.phase) *
+                star.depth * 12;
+
+            const x = ((star.x + parallaxX) % width + width) % width;
+            const y = ((star.y - parallaxY) % height + height) % height;
+
+            const color = star.tint > 0.83
+                ? `rgba(190, 166, 255, ${alpha})`
+                : star.tint > 0.65
+                    ? `rgba(255, 224, 174, ${alpha})`
+                    : `rgba(225, 228, 255, ${alpha})`;
+
+            ctx.beginPath();
+            ctx.arc(x, y, star.radius, 0, Math.PI * 2);
+            ctx.fillStyle = color;
+            ctx.fill();
+
+            // Only a few brighter stars get a glow
+            if (star.radius > 1.15) {
+                ctx.beginPath();
+                ctx.arc(x, y, star.radius * 3.5, 0, Math.PI * 2);
+
+                ctx.fillStyle = star.tint > 0.65
+                    ? `rgba(163, 127, 255, ${alpha * 0.10})`
+                    : `rgba(210, 220, 255, ${alpha * 0.09})`;
+
+                ctx.fill();
+            }
+        });
+    }
+
+    // -----------------------------------------
+    // GALAXY NEBULA
+    // -----------------------------------------
+
+    function drawNebula() {
+        const scroll = smoothScroll;
+
+        const clouds = [
+            {
+                x: width * 0.18,
+                y: height * 0.20 - scroll * 0.035,
+                radius: Math.max(width * 0.36, 180),
+                color: "rgba(111, 56, 210, 0.13)"
+            },
+            {
+                x: width * 0.82,
+                y: height * 0.48 - scroll * 0.055,
+                radius: Math.max(width * 0.31, 160),
+                color: "rgba(51, 91, 210, 0.11)"
+            },
+            {
+                x: width * 0.50,
+                y: height * 0.88 - scroll * 0.025,
+                radius: Math.max(width * 0.28, 140),
+                color: "rgba(173, 102, 213, 0.075)"
+            }
+        ];
+
+        clouds.forEach(cloud => {
+            const gradient = ctx.createRadialGradient(
+                cloud.x, cloud.y, 0,
+                cloud.x, cloud.y, cloud.radius
+            );
+
+            gradient.addColorStop(0, cloud.color);
+            gradient.addColorStop(0.45, cloud.color.replace(
+                /[\d.]+\)$/,
+                "0.035)"
+            ));
+            gradient.addColorStop(1, "rgba(0, 0, 0, 0)");
+
+            ctx.fillStyle = gradient;
+            ctx.fillRect(
+                cloud.x - cloud.radius,
+                cloud.y - cloud.radius,
+                cloud.radius * 2,
+                cloud.radius * 2
+            );
+        });
+    }
+
+    // -----------------------------------------
+    // CREATE COMETS
+    // -----------------------------------------
+
+    function createComet() {
+        const fromLeft = Math.random() > 0.5;
+
+        const startX = fromLeft
+            ? random(-100, width * 0.35)
+            : random(width * 0.55, width + 100);
+
+        const startY = random(-50, height * 0.55);
+
+        const angle = fromLeft
+            ? random(0.25, 0.65)
+            : random(2.35, 2.85);
+
+        const speed = mobileQuery.matches
+            ? random(1.0, 1.8)
+            : random(1.5, 2.5);
+
+        comets.push({
+            x: startX,
+            y: startY,
+
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed,
+
+            length: random(55, 120),
+            life: 1,
+
+            width: random(0.8, 1.5),
+            color: Math.random() > 0.5
+                ? "180, 166, 255"
+                : "202, 220, 255"
+        });
+    }
+
+    function drawComets(delta) {
+        comets.forEach(comet => {
+            comet.x += comet.vx * delta;
+            comet.y += comet.vy * delta;
+
+            comet.life -= 0.00013 * delta;
+
+            const tailX = comet.x - comet.vx * comet.length;
+            const tailY = comet.y - comet.vy * comet.length;
+
+            const gradient = ctx.createLinearGradient(
+                tailX, tailY, comet.x, comet.y
+            );
+
+            gradient.addColorStop(
+                0,
+                `rgba(${comet.color}, 0)`
+            );
+
+            gradient.addColorStop(
+                0.7,
+                `rgba(${comet.color}, ${Math.max(0, comet.life) * 0.22})`
+            );
+
+            gradient.addColorStop(
+                1,
+                `rgba(255, 255, 255, ${Math.max(0, comet.life) * 0.8})`
+            );
+
+            ctx.beginPath();
+            ctx.moveTo(tailX, tailY);
+            ctx.lineTo(comet.x, comet.y);
+
+            ctx.strokeStyle = gradient;
+            ctx.lineWidth = comet.width;
+            ctx.lineCap = "round";
+            ctx.stroke();
+
+            // Tiny bright comet head
+            ctx.beginPath();
+            ctx.arc(comet.x, comet.y, 1.4, 0, Math.PI * 2);
+
+            ctx.fillStyle =
+                `rgba(255, 255, 255, ${Math.max(0, comet.life)})`;
+
+            ctx.fill();
+        });
+
+        comets = comets.filter(comet =>
+            comet.life > 0 &&
+            comet.x > -300 &&
+            comet.x < width + 300 &&
+            comet.y > -300 &&
+            comet.y < height + 300
+        );
+    }
+
+    // -----------------------------------------
+    // SHOOTING STARS
+    // -----------------------------------------
+
+    function createShootingStar() {
+        shootingStars.push({
+            x: random(width * 0.25, width * 0.95),
+            y: random(0, height * 0.45),
+
+            vx: random(-8, -5),
+            vy: random(3, 5),
+
+            length: random(35, 75),
+            life: 1
+        });
+    }
+
+    function drawShootingStars(delta) {
+        shootingStars.forEach(star => {
+            star.x += star.vx * delta * 0.06;
+            star.y += star.vy * delta * 0.06;
+            star.life -= delta * 0.00065;
+
+            const gradient = ctx.createLinearGradient(
+                star.x - star.vx * star.length * 0.06,
+                star.y - star.vy * star.length * 0.06,
+                star.x,
+                star.y
+            );
+
+            gradient.addColorStop(0, "rgba(255,255,255,0)");
+            gradient.addColorStop(
+                1,
+                `rgba(230,220,255,${Math.max(0, star.life) * 0.7})`
+            );
+
+            ctx.beginPath();
+            ctx.moveTo(
+                star.x - star.vx * star.length * 0.06,
+                star.y - star.vy * star.length * 0.06
+            );
+            ctx.lineTo(star.x, star.y);
+
+            ctx.strokeStyle = gradient;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+        });
+
+        shootingStars = shootingStars.filter(star => star.life > 0);
+    }
+
+    // -----------------------------------------
+    // RENDER ENGINE
+    // -----------------------------------------
+
+    function render(time, delta) {
+        ctx.clearRect(0, 0, width, height);
+
+        drawNebula();
+        drawStars(time);
+        drawComets(delta);
+        drawShootingStars(delta);
+    }
+
+    function animate(time) {
+        if (reducedMotion.matches || document.hidden) {
+            frameId = null;
+            return;
+        }
+
+        const delta = lastFrame
+            ? Math.min(time - lastFrame, 40)
+            : 16;
+
+        lastFrame = time;
+        elapsed += delta;
+
+        // Smooth background movement on scroll
+        smoothScroll +=
+            (targetScroll - smoothScroll) * CONFIG.scrollEase;
+
+        // Occasionally spawn a comet
+        if (time >= nextComet) {
+            createComet();
+
+            nextComet = time + random(
+                CONFIG.cometIntervalMin,
+                CONFIG.cometIntervalMax
+            );
+        }
+
+        // Shooting stars appear less often
+        if (time >= nextShootingStar) {
+            if (Math.random() > 0.35) {
+                createShootingStar();
+            }
+
+            nextShootingStar = time + random(
+                CONFIG.shootingStarIntervalMin,
+                CONFIG.shootingStarIntervalMax
+            );
+        }
+
+        // Keep animation light on mobile and desktop
+        if (time - lastFrame < 1000 / 60) {
+            render(time, delta);
+        }
+
+        frameId = requestAnimationFrame(animate);
+    }
+
+    function start() {
+        if (frameId !== null || reducedMotion.matches) return;
+
+        lastFrame = 0;
+        frameId = requestAnimationFrame(animate);
+    }
+
+    function stop() {
+        if (frameId !== null) {
+            cancelAnimationFrame(frameId);
+            frameId = null;
+        }
+    }
+
+    // -----------------------------------------
+    // EVENTS
+    // -----------------------------------------
+
+    window.addEventListener("scroll", () => {
+        targetScroll = window.scrollY;
+    }, { passive: true });
+
+    window.addEventListener("resize", resizeCanvas, {
+        passive: true
+    });
+
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+            stop();
+        } else {
+            start();
+        }
+    });
+
+    reducedMotion.addEventListener?.("change", () => {
+        if (reducedMotion.matches) {
+            stop();
+            render(performance.now(), 0);
+        } else {
+            start();
+        }
+    });
+
+    // Start everything
+    resizeCanvas();
+
+    if (!reducedMotion.matches) {
+        start();
+    }
+})();
