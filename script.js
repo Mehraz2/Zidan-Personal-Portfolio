@@ -1390,14 +1390,34 @@
             dot.style.animation =
                 "zvGoldPulse 3.5s ease-in-out infinite";
         });
-
         /* ====================================================
            22. IMAGE LOADING
         ==================================================== */
 
+        selectAll("img").forEach((image) => {
+            const onLoad = () => {
+                image.classList.add("zv-image-loaded");
+            };
 
+            if (image.complete && image.naturalWidth > 0) {
+                onLoad();
+            } else {
+                image.addEventListener("load", onLoad, {
+                    once: true
+                });
+            }
 
+            addCleanup(() => {
+                image.removeEventListener("load", onLoad);
+            });
+        });
 
+        /* ====================================================
+           23. OPTIONAL NUMBER COUNTERS
+
+           Example:
+           <span data-zv-count="100">0</span>
+        ==================================================== */
 
 
 
