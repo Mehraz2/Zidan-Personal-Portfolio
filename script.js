@@ -1296,10 +1296,41 @@
             body.appendChild(progressBar);
         }
 
-        /* ====================================================
+     /* ====================================================
            19. BACK TO TOP
         ==================================================== */
 
+        let backToTop = select(".zv-back-to-top");
+
+        if (!backToTop) {
+            backToTop = document.createElement("button");
+
+            backToTop.type = "button";
+            backToTop.className = "zv-back-to-top";
+            backToTop.textContent = "↑";
+
+            backToTop.setAttribute("aria-label", "Back to top");
+            backToTop.setAttribute("title", "Back to top");
+
+            body.appendChild(backToTop);
+        }
+
+        const onBackToTop = () => {
+            window.scrollTo({
+                top: 0,
+                behavior: prefersReducedMotion ? "auto" : "smooth"
+            });
+        };
+
+        backToTop.addEventListener("click", onBackToTop);
+
+        addCleanup(() => {
+            backToTop.removeEventListener("click", onBackToTop);
+        });
+
+        /* ====================================================
+           20. SCROLL HANDLER
+        ==================================================== */
 
 
 
